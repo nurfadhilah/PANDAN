@@ -145,7 +145,7 @@ $result = mysql_query($query, $conn);
 
 while($row = mysql_fetch_array($result))
 {
- $id_kuota = $row["id_kuota"];
+ $id = $row["id"];
  $kelas = $row["kelas"];
  $guru = $row["guru"];
  $kuota = $row["kuota"];
@@ -163,7 +163,7 @@ while($row = mysql_fetch_array($result))
                   </tr>
                             
                   <tr>
-                   <td align="center" style="color:#000"><?php echo $id_kuota; ?></td>
+                   <td align="center" style="color:#000"><?php echo $id; ?></td>
                    
                    <td background-color="#99CC33"><a href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a></td>
         
