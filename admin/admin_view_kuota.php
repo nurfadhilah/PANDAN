@@ -135,7 +135,7 @@
 </div><!-- end intro -->
 
 <div id="content">
-<<<<<<< HEAD
+	<<<<<<< HEAD
 
 	<div id="content">
 
@@ -145,121 +145,123 @@
 
 				<div class="page"><br/>
 
-=======
-    	
-        <div id="content">
-    	
-        <div class="wrap">
-          <div class="b8">
-                               <h3 class="title">KUOTA KELAS <a href="report_teac.php">(LAPORAN)</a></h3>
+					=======
 
-                <div class="page"><br />
-                
-                <?php
-				
-include("dbase.php");
+					<div id="content">
 
-$query = "SELECT * FROM kuota";
-$result = mysql_query($query, $conn);
+						<div class="wrap">
+							<div class="b8">
+								<h3 class="title">KUOTA KELAS <a href="report_teac.php">(LAPORAN)</a></h3>
 
-while($row = mysql_fetch_array($result))
-{
- $id = $row["id"];
- $kelas = $row["kelas"];
- $guru = $row["guru"];
- $kuota = $row["kuota"];
- 
-?>
-               
-                <center>
-                  <table id="d02" width="789" border="1">
-                  <tr>
-                   <th  width="138">NO.</th>
-                    <th  width="138">KELAS</th>
-                    <th width="357">GURU</th> 
-                    <th width="357">KUOTA</th>
-                    
-                  </tr>
-                            
-                  <tr>
-                   <td align="center" style="color:#000"><?php echo $id; ?></td>
-                   
-                   <td background-color="#99CC33"><a href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a></td>
-        
-                    <td bgcolor="#CC0033"><?php echo $guru; ?></td>
-                    <td bgcolor="#CC0033"><?php echo $kuota; ?></td>
-                    
-					
-					
->>>>>>> 43182c966b31d705d36a6a8a85fbbe6c5e3908ed
-					<?php
+								<div class="page"><br/>
 
-					include("dbase.php");
+									<?php
 
-					$query = "SELECT * FROM kuota";
-					$result = mysql_query($query, $conn);
+									include("dbase.php");
 
-					while ($row = mysql_fetch_array($result))
-					{
-					$id_kuota = $row["id_kuota"];
-					$kelas = $row["kelas"];
-					$guru = $row["guru"];
-					$kuota = $row["kuota"];
+									$query = "SELECT * FROM kuota";
+									$result = mysql_query($query, $conn);
 
-					?>
+									while ($row = mysql_fetch_array($result))
+									{
+									$id = $row["id"];
+									$kelas = $row["kelas"];
+									$guru = $row["guru"];
+									$kuota = $row["kuota"];
 
+									?>
+
+									<center>
+										<table id="d02" width="789" border="1">
+											<tr>
+												<th width="138">NO.</th>
+												<th width="138">KELAS</th>
+												<th width="357">GURU</th>
+												<th width="357">KUOTA</th>
+
+											</tr>
+
+											<tr>
+												<td align="center" style="color:#000"><?php echo $id; ?></td>
+
+												<td background-color="#99CC33"><a
+														href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a>
+												</td>
+
+												<td bgcolor="#CC0033"><?php echo $guru; ?></td>
+												<td bgcolor="#CC0033"><?php echo $kuota; ?></td>
+
+
+												>>>>>>> 43182c966b31d705d36a6a8a85fbbe6c5e3908ed
+												<?php
+
+												include("dbase.php");
+
+												$query = "SELECT * FROM kuota";
+												$result = mysql_query($query, $conn);
+
+												while ($row = mysql_fetch_array($result))
+												{
+												$id_kuota = $row["id_kuota"];
+												$kelas = $row["kelas"];
+												$guru = $row["guru"];
+												$kuota = $row["kuota"];
+
+												?>
+
+												<center>
+													<table id="d02" width="789" border="1">
+														<tr>
+															<th width="138">NO.</th>
+															<th width="138">KELAS</th>
+															<th width="357">GURU</th>
+															<th width="357">KUOTA</th>
+
+														</tr>
+
+														<tr>
+															<td align="center"
+															    style="color:#000"><?php echo $id_kuota; ?></td>
+
+															<td background-color="#99CC33"><a
+																	href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a>
+															</td>
+
+															<td bgcolor="#CC0033"><?php echo $guru; ?></td>
+															<td bgcolor="#CC0033"><?php echo $kuota; ?></td>
+
+
+															<?php
+															}
+															?>
+														</tr>
+													</table>
+												</center>
+												<center></center>
+								</div>
+								<!--  end entry -->
+
+							</div>
+							<p>&nbsp;</p><!-- end sidebar -->
+						</div><!-- end wrap -->
+
+					</div><!-- end wrap -->
+
+				</div><!-- end content -->
+
+				<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8"/>
+
+				<div id="footer">
+					<div class="wrap">
+
+
+					</div><!-- end wrap -->
 					<center>
-						<table id="d02" width="789" border="1">
-							<tr>
-								<th width="138">NO.</th>
-								<th width="138">KELAS</th>
-								<th width="357">GURU</th>
-								<th width="357">KUOTA</th>
-
-							</tr>
-
-							<tr>
-								<td align="center" style="color:#000"><?php echo $id_kuota; ?></td>
-
-								<td background-color="#99CC33"><a
-										href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a>
-								</td>
-
-								<td bgcolor="#CC0033"><?php echo $guru; ?></td>
-								<td bgcolor="#CC0033"><?php echo $kuota; ?></td>
-
-
-								<?php
-								}
-								?>
-							</tr>
-						</table>
+						<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 					</center>
-					<center></center>
 				</div>
-				<!--  end entry -->
-
-			</div>
-			<p>&nbsp;</p><!-- end sidebar -->
-		</div><!-- end wrap -->
-
-	</div><!-- end wrap -->
-
-</div><!-- end content -->
-
-<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8"/>
-
-<div id="footer">
-	<div class="wrap">
-
-
-	</div><!-- end wrap -->
-	<center>
-		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
-	</center>
-</div>
-<center></center>
-</div><!-- end footer -->
+				<center></center>
+			</div><!-- end footer -->
 
 </body>
 </html>

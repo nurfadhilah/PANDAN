@@ -1,24 +1,24 @@
 <?php
 
-	include("../admin/dbase.php");
+include("../admin/dbase.php");
 
-	if(isset($_POST['submit'])){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$password = $_POST['password'];
 
-		$sql = "SELECT * FROM users WHERE email='$email'";
-		$results = mysql_query($sql);
-		while($row = mysql_fetch_assoc($results)){
-			if($row['email'] == $email && $row['password'] == md5($password)){
-				session_start();
-				$_SESSION['user'] = $row;
-				echo "<script>alert('Selamat datang {$_SESSION['user']['username']}!')</script>";
-				echo "<script>setTimeout(function(){window.location.href = 'about_Parents.html'}, 1000)</script>";
-			}else{
-				echo "<script>alert('Tiada maklumat ditemui!')</script>";
-			}
+	$sql = "SELECT * FROM users WHERE email='$email'";
+	$results = mysql_query($sql);
+	while ($row = mysql_fetch_assoc($results)) {
+		if ($row['email'] == $email && $row['password'] == md5($password)) {
+			session_start();
+			$_SESSION['user'] = $row;
+			echo "<script>alert('Selamat datang {$_SESSION['user']['username']}!')</script>";
+			echo "<script>setTimeout(function(){window.location.href = 'about_Parents.html'}, 1000)</script>";
+		} else {
+			echo "<script>alert('Tiada maklumat ditemui!')</script>";
 		}
 	}
+}
 
 ?>
 

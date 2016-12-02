@@ -11,10 +11,10 @@ $config['subject'] = 'Contact message from %name%';
 
 // These are the messages displayed in case of form errors.
 $config['errors'] = [
-		'no_name' => 'Please enter your name',
-		'no_email' => 'Your Email adresse is required.',
-		'invalid_email' => 'You entered an invalid email address.',
-		'no_message' => 'Please, include your message.',
+	'no_name' => 'Please enter your name',
+	'no_email' => 'Your Email adresse is required.',
+	'invalid_email' => 'You entered an invalid email address.',
+	'no_message' => 'Please, include your message.',
 ];
 
 // END OF CONFIGURATION -------------------------------------------------------
@@ -75,7 +75,7 @@ if (empty($errors)) {
 	// Send the mail
 	if (!mail($config['recipient'], $subject, $message, $headers)) {
 		$errors['server'] = 'There seems to be a technical problem with our server. We are sorry. ' .
-				'Could you mail your message directly at ' . $config['recipient'] . '? Thank you.';
+			'Could you mail your message directly at ' . $config['recipient'] . '? Thank you.';
 	}
 }
 
