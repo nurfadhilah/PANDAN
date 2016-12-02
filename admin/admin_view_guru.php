@@ -133,47 +133,77 @@
             	
                	 
                         <h3 class="title">PAPARAN GURU</h3>
+                        
+                         <?php
+include("dbase.php");
+
+$query = "SELECT * FROM guru";
+$result = mysql_query($query, $conn);
+
+while($row = mysql_fetch_array($result))
+
+{
+ $id_guru = $row["id_guru"];
+ $Name = $row["Name"];
+ $ic = $row["ic"];
+ $umur = $row["umur"];
+ $email = $row["email"];
+ $notelefon = $row["notelefon"];
+ $tarikhlahir = $row["tarikhlahir"];
+ $alamat = $row["alamat"];
+
+?>
                	    
                	<center>
                	    <table id="d03" width="1000px" border="1">
                	      <tr>
                	        <td><p>&nbsp;</p>
-               	          <form action="admin_edit_std.php?id=<?php echo $std_id; ?>" method="post" name="details">
+               	          <form>
                           <center><table  id="contact"width="527" border="1"  align="center">
                	          <tr style="text-align:left">
                	            <td width="183">NAMA</td>
-               	            <td width="328">&nbsp;</td>
+               	            <td width="328"><?php echo $Name; ?></td>
            	              </tr>
                	          <tr>
                	            <td>KAD PENGENALAN</td>
-               	            <td>&nbsp;</td>
+               	            <td><?php echo $ic; ?></td>
            	              </tr>
                	          <tr>
                	            <td>UMUR</td>
-               	            <td>&nbsp;</td>
+               	            <td><?php echo $umur; ?></td>
            	              </tr>
                	          <tr>
                	            <td>EMAIL</td>
-               	            <td><?php echo $std_ic; ?></td>
+               	            <td><?php echo $email; ?></td>
            	              </tr>
                	          <tr>
                	            <td>NO. TELEFON</td>
-               	            <td><?php echo $phone_num; ?></td>
+               	            <td><?php echo $notelefon; ?></td>
            	              </tr>
                	          <tr>
                	            <td>TARIKH LAHIR</td>
-               	            <td><?php echo $address; ?></td>
+               	            <td><?php echo $tarikhlahir; ?></td>
            	              </tr>
                	          <tr>
                	            <td>ALAMAT</td>
-               	            <td><?php echo $parents; ?></td>
+               	            <td><?php echo $alamat; ?></td>
            	              </tr>
                           <tr>
                	            <td>Action</td>
                	            <td>
-               	              <input type="submit" name="button" id="button" value="Kembali"></td>
+               	              <a href="admin_list_guru.php?id=<?php echo $ic; ?>"><input type="submit" name="button" id="button" value="Kembali"></td>
+                              
+              
            	              </tr>
-             	          </table></center></form>
+             	          </table></center>
+                          
+                          
+                          </form>
+                          
+                          <?php
+                             }
+                               ?>
+                               
                	        </table>
                	    
                	    

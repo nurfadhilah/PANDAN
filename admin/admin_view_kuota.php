@@ -132,54 +132,47 @@
     	
         <div class="wrap">
           <div class="b8">
-                               <h3 class="title">KUOTA PELAJAR<a href="report_teac.php"></a></h3>
+                               <h3 class="title">KUOTA KELAS <a href="report_teac.php">(LAPORAN)</a></h3>
 
                 <div class="page"><br />
-                  <center>
-                    <table id="d02" width="789" border="1">
+                
+                <?php
+				
+include("dbase.php");
+
+$query = "SELECT * FROM kuota";
+$result = mysql_query($query, $conn);
+
+while($row = mysql_fetch_array($result))
+{
+ $id_kuota = $row["id_kuota"];
+ $kelas = $row["kelas"];
+ $guru = $row["guru"];
+ $kuota = $row["kuota"];
+ 
+?>
+               
+                <center>
+                  <table id="d02" width="789" border="1">
                   <tr>
                    <th  width="138">NO.</th>
-                    <th  width="138">NAMA GURU</th>
-                    <th width="357">KELAS MENGAJAR</th> 
+                    <th  width="138">KELAS</th>
+                    <th width="357">GURU</th> 
                     <th width="357">KUOTA</th>
-                    <th width="272">TINDAKAN</th>
-                  </tr><?php $count=$start_from;
-                  while( $row = mysql_fetch_assoc( $rs_result ) )
-				  {$count++;;
-				 $lec_id = $row['lecturer_id'];
-				 $lec_name = $row['lecturer_name'];
-				 $subject = $row['subject'];
-				 
-				 if ($subject=="BM1"){
-					 $sub_name='Bahasa Melayu (Pemahaman)'; 
-					 
-				 }
-				 else if ($subject=="BM2"){
-					 $sub_name='Bahasa Melayu (Penulisan)'; 
-					 
-				 }
-				 else if ($subject=="SN"){
-					 $sub_name='Science'; 
-					 
-				 }
-				 else if ($subject=="MM"){
-					 $sub_name='Mathematic'; 
-					 
-				 }
-				 else if ($subject=="BI"){
-					 $sub_name='English'; 
-					 
-				 }
-
-								  
-                              ?>
+                    
+                  </tr>
                             
                   <tr>
-                   <td align="center" style="color:#000">&nbsp;</td>
-                    <td background-color="#99CC33">&nbsp;</td>
-                    <td bgcolor="#CC0033">&nbsp;</td>
-                    <td bgcolor="#CC0033">&nbsp;</td>
-                    <td bgcolor="#CC0033"><a href="admin_drop_teacher.php?id=<?php echo $lec_id; ?>"><input type="reset" name="input2" class="reset" value="KEMASKINI" /></a></td><?php
+                   <td align="center" style="color:#000"><?php echo $id_kuota; ?></td>
+                   
+                   <td background-color="#99CC33"><a href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a></td>
+        
+                    <td bgcolor="#CC0033"><?php echo $guru; ?></td>
+                    <td bgcolor="#CC0033"><?php echo $kuota; ?></td>
+                    
+					
+					
+					<?php
                              }
                                ?>
                   </tr>
@@ -187,7 +180,7 @@
             </div>
                 <!--  end entry -->
                 
-          </div>
+      </div>
             <p>&nbsp;</p><!-- end sidebar -->
         </div><!-- end wrap -->
         
@@ -195,6 +188,7 @@
         
     </div><!-- end content -->
     
+    <img src="../../AGL_all/img/acdrule.gif" width="1358" height="8" />
     <div id="footer">
     <div class="wrap">
     
@@ -205,8 +199,6 @@
   <p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
           </center>
 </div>
-    <img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
-    
 <center></center>
 </div><!-- end footer -->
     

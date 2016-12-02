@@ -161,51 +161,21 @@ $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array i
                         <form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME'];?>" method="post" name="details">
                           <center>
                             <table  id="d02"width="628" border="1"  align="center">
-                              <tr style="text-align:left">
-                                <td width="247">Name</td>
-                                <td width="365"><input name="std_name" type="text" id="textfield" value="<?php echo $std_name; ?>" size="50"></td>
+                              <tr>
+                                <td width="247">NO ID</td>
+                                <td width="365"><?php echo $_SESSION['SESS_USERNAME'];?></td>
                               </tr>
                               <tr>
-                                <td>Student ID</td>
-                                <td><?php echo $_SESSION['SESS_USERNAME'];?></td>
-                              </tr>
-                              <tr>
-                                <td>Standard</td>
-                                <td> <select name="standard" >
-                      <option disabled=disabled value="" >Current Standard</option>
-                        <option value="<?php echo $standard?>"><?php echo $standard?></option> 
-                        <option disabled=disabled value="" >Change to</option>
-                        <option value="Standard 1">Standard1</option>
-                        <option value="Standard 2">Standard2</option>
-                        <option value="Standard 3">Standard3</option>
-                        <option value="Standard 4">Standard4</option>
-                        <option value="Standard 5">Standard5</option>
-                        <option value="Standard 6">Standard6</option>
-                      </select></td>
-                              </tr>
-                              <tr>
-                                <td>Student IC</td>
+                                <td>KELAS</td>
                                 <td><input name="std_ic" type="text" id="textfield4" value="<?php echo $std_ic; ?>" size="50"></td>
                               </tr>
                               <tr>
-                                <td>Phone Number</td>
+                                <td>GURU</td>
+                                <td><input name="std_ic" type="text" id="textfield4" value="<?php echo $std_ic; ?>" size="50"></td>
+                              </tr>
+                              <tr>
+                                <td>KUOTA</td>
                                 <td><input name="phone_num" type="text" id="textfield5" value="<?php echo $phone_num; ?>" size="50"></td>
-                              </tr>
-                              <tr>
-                                <td>Address</td>
-                                <td><input name="address" type="text" id="textfield6" value="<?php echo $address; ?>" size="50"></td>
-                              </tr>
-                              <tr>
-                                <td>Parent's Name</td>
-                                <td><input name="parents" type="text" id="textfield7" value="<?php echo $parents; ?>" size="50"></td>
-                              </tr>
-                              <tr>
-                                <td>Parent's Phone Number</td>
-                                <td><input name="pnum" type="text" id="textfield8" value="<?php echo $pnum; ?>" size="50"></td>
-                              </tr>
-                              <tr>
-                                <td>Email</td>
-                                <td><input name="emel" type="text" id="textfield9" value="<?php echo $emel; ?>" size="50"></td>
                               </tr>
                               <tr>
                                 <td></td>
