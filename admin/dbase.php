@@ -3,10 +3,10 @@
 <?php
 
 //To establish a connection to database and save in $conn
-$conn = mysql_connect('localhost', 'root', '', 'pandan');
+$conn = mysql_connect('localhost', 'root', 'password', 'pandan');
 //if connection failed then display mysql error
-if (!$conn){
-die("Could not connect to database");
+if (!$conn) {
+	die("Could not connect to database");
 }
 
 //To select one particular database to be used
