@@ -97,7 +97,11 @@
 			<div class="c-8">
 				<h1>SIGN UP</h1>
 
-				<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo;<strong>SIGN UP </strong></p>
+				<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+					echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+				} else {
+					echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+				} ?> &raquo;<strong>SIGN UP </strong></p>
 			</div>
 
 			<div class="c-4">

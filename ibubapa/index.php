@@ -10,10 +10,9 @@ if (isset($_POST['submit'])) {
 	$results = mysql_query($sql);
 	while ($row = mysql_fetch_assoc($results)) {
 		if ($row['email'] == $email && $row['password'] == md5($password)) {
-			session_start();
 			$_SESSION['user'] = $row;
 			echo "<script>alert('Selamat datang {$_SESSION['user']['username']}!')</script>";
-			echo "<script>setTimeout(function(){window.location.href = 'about_Parents.html'}, 1000)</script>";
+			echo "<script>setTimeout(function(){window.location.href = 'about_Parents.php'}, 1000)</script>";
 		} else {
 			echo "<script>alert('Tiada maklumat ditemui!')</script>";
 		}
@@ -22,7 +21,8 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -119,8 +119,13 @@ if (isset($_POST['submit'])) {
 
 			<div class="c-8">
 				<h1>HOME </h1>
-
-				<p class="breadcrumbs">You are here:<strong>Home</strong></p>
+				<?php
+				if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+					echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+				} else {
+					echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+				}
+				?>
 			</div>
 
 			<div class="c-4">
@@ -384,7 +389,7 @@ if (isset($_POST['submit'])) {
 					<div class="bottom">
 						<div class="remember">
 							<p>
-								<input name="Submit" type="submit" value="Log In"/>
+								<input name="submit" type="submit" value="Log In"/>
 
 						</div>
 						<div class="clear"></div>

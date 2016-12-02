@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -121,8 +122,12 @@
 		<div class="c-8">
 			<h1>ATTENDANCE</h1>
 
-			<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo; <a href="home">Sample
-					Page</a> &raquo; <strong>About Full</strong></p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?> &raquo; <a href="home">Sample
+				Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
 		<div class="c-4">
@@ -176,22 +181,25 @@
 								<th width="272">Action</th>
 							</tr>
 							<?php $count = $start_from;
-							while ($row = mysql_fetch_assoc($rs_result)){
-							$count++;;
-							$std_id = $row['std_id'];
-							$std_name = $row['std_name'];
+							while ($row = mysql_fetch_assoc($rs_result)) {
+								$count++;;
+								$std_id = $row['std_id'];
+								$std_name = $row['std_name'];
 
 
-							?>
+								?>
 
-							<tr>
-								<td align="center" style="color:#000">&nbsp;</td>
-								<td bgcolor="#CC0033"><a href="admin_drop_student.php?id=<?php echo $std_id; ?>"><input
-											type="reset" name="input2" class="reset" value="VIEW DETAILS"/>
-									</a></td>
+								<tr>
+									<td align="center" style="color:#000">&nbsp;</td>
+									<td bgcolor="#CC0033"><a
+											href="admin_drop_student.php?id=<?php echo $std_id; ?>"><input
+												type="reset" name="input2" class="reset" value="VIEW DETAILS"/>
+										</a></td>
 
 
-							</tr>
+								</tr>
+
+							<?php } ?>
 						</table>
 					</center>
 					<center></center>
