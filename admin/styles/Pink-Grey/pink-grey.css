@@ -3,6 +3,24 @@
 a:hover{color:#fd6aa1;}
 h1 a { background: url("logo.png") no-repeat scroll left top transparent; }
 th { background-color:#535a62; color: #bbb; }
+
+table#d02 {
+	border-collapse:collapse;
+	border:1px dotted #535a62;
+}
+
+table#d02 th {
+	text-align:center;
+	background-color:#535a62;
+	color:white;
+}
+
+table#d02 tr td, #d06 tr td{
+	border:1px dotted #535a62;
+}
+
+
+
 label { color:#535a62; }
 .meta {color: #fd6aa1;} 
 

@@ -1590,6 +1590,8 @@ table#d01 {
 table#d01 th{
 	text-align:center;
 	}
+	
+
 
 table#d01 tr:nth-child(even) {background-color: #3FA7B8;
 color:#FFFFFF;}
