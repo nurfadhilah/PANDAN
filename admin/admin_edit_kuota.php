@@ -135,6 +135,7 @@
 </div><!-- end intro -->
 
 <div id="content">
+<<<<<<< HEAD
 
 	<div class="wrap">
 		<div class="b8">
@@ -220,6 +221,85 @@
 	<center>
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 	</center>
+=======
+    	
+        <div class="wrap">
+            <div class="b8">
+             <h3 class="title">KUOTA</h3>
+             <p><span class="c-12">
+             
+             <?php
+include("dbase.php");
+
+$idURL = $_GET['id'];
+
+$query = "SELECT * FROM kuota WHERE id = '$idURL'";
+$result = mysql_query($query, $conn) or die ("Could not execute in ubah.php");
+
+$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
+
+ $id = $row["id"];
+ $kelas = $row["kelas"];
+ $guru = $row["guru"];
+ $kuota = $row["kuota"];
+ 
+
+@mysql_free_result($result);
+?>
+             
+               
+             </span></p>
+                <div class="page">
+                  <table id="d03" width="1000px" border="1">
+                    <tr>
+                      <td><p>&nbsp;</p>
+                        <form action="admin_edit_kuota_process.php?id=<?php echo $id_kuota;?>" method="post" name="details">
+                          <center>
+                            <table  id="d02"width="628" border="1"  align="center">
+                              <tr>
+                                <td width="247">NO ID</td>
+                                <td width="365"><?php echo $id; ?> <input type="hidden" value="<?php echo $id_kuota; ?>" name="id_kuota"/> </td>
+                              </tr>
+                              <tr>
+                                <td>KELAS</td>
+                                <td><input name="std_ic" type="text" id="textfield4" value="<?php echo $kelas; ?>" size="50"></td>
+                              </tr>
+                              <tr>
+                                <td>GURU</td>
+                                <td><input name="std_ic" type="text" id="textfield4" value="<?php echo $guru; ?>" size="50"></td>
+                              </tr>
+                              <tr>
+                                <td>KUOTA</td>
+                                <td><input name="phone_num" type="text" id="textfield5" value="<?php echo $kuota; ?>" size="50"></td>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td align="right"><input type="submit" name="button2" id="button2" value="KEMASKINI">
+                               </td>
+                              </tr>
+                            </table>
+                          </center>
+                        </form>
+                  </table>
+                </div><!--  end page -->
+               
+                
+          </div>
+            <div class="b4 sidebar"></div><!-- end sidebar -->
+        </div><!-- end wrap -->
+        
+    </div><!-- end content -->
+    
+    <div id="footer">
+    <div class="wrap">
+    
+   	  
+            
+    </div><!-- end wrap -->
+    <center>
+  <p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
+      </center>
+>>>>>>> 43182c966b31d705d36a6a8a85fbbe6c5e3908ed
 </div>
 <img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
