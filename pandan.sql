@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 03, 2016 at 09:49 AM
--- Server version: 5.7.10-log
--- PHP Version: 5.6.17
+-- Host: 127.0.0.1
+-- Generation Time: Dec 03, 2016 at 11:12 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `pandan`
@@ -26,16 +26,17 @@ SET time_zone = "+00:00";
 -- Table structure for table `guru`
 --
 
-CREATE TABLE `guru` (
-  `id_guru` int(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `guru` (
+  `id_guru` int(50) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL,
   `ic` varchar(20) NOT NULL,
   `umur` int(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `notelefon` varchar(20) NOT NULL,
   `tarikhlahir` varchar(20) NOT NULL,
-  `alamat` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `alamat` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_guru`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `guru`
@@ -50,12 +51,13 @@ INSERT INTO `guru` (`id_guru`, `Name`, `ic`, `umur`, `email`, `notelefon`, `tari
 -- Table structure for table `kuota`
 --
 
-CREATE TABLE `kuota` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `kuota` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kelas` varchar(10) NOT NULL,
   `guru` varchar(30) NOT NULL,
-  `kuota` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kuota` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `kuota`
@@ -68,13 +70,35 @@ INSERT INTO `kuota` (`id`, `kelas`, `guru`, `kuota`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pengumuman`
+--
+
+CREATE TABLE IF NOT EXISTS `pengumuman` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tarikh` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tajuk` varchar(100) NOT NULL,
+  `pengumuman` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `pengumuman`
+--
+
+INSERT INTO `pengumuman` (`id`, `tarikh`, `tajuk`, `pengumuman`) VALUES
+(4, '0000-00-00 00:00:00', 'SUKANEKA', 'IBU BAPA DIJEMPUT HADIR KE TADIKA KEMAS PANDAN 1\r\nTARIKH : 26.04.2017\r\nMASA   :RABU\r\n');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `roles`
@@ -92,8 +116,8 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- Table structure for table `toddlers`
 --
 
-CREATE TABLE `toddlers` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `toddlers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `standard` int(11) DEFAULT NULL,
   `dob` varchar(255) DEFAULT NULL,
@@ -132,8 +156,9 @@ CREATE TABLE `toddlers` (
   `doc_standard_7` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `modified_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `modified_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `toddlers`
@@ -148,8 +173,8 @@ INSERT INTO `toddlers` (`id`, `name`, `standard`, `dob`, `birth_place`, `birth_n
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` text,
@@ -177,8 +202,9 @@ CREATE TABLE `users` (
   `mother_phone` varchar(255) DEFAULT NULL,
   `address_2` text,
   `role_id` int(11) DEFAULT NULL,
-  `status_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `status_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
@@ -193,10 +219,11 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `first_name`, `last_
 -- Table structure for table `users_status`
 --
 
-CREATE TABLE `users_status` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `users_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `users_status`
@@ -207,80 +234,6 @@ INSERT INTO `users_status` (`id`, `name`) VALUES
 (2, 'Tidak Aktif'),
 (3, 'Mendaftar');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `guru`
---
-ALTER TABLE `guru`
-  ADD PRIMARY KEY (`id_guru`);
-
---
--- Indexes for table `kuota`
---
-ALTER TABLE `kuota`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `toddlers`
---
-ALTER TABLE `toddlers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_status`
---
-ALTER TABLE `users_status`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `guru`
---
-ALTER TABLE `guru`
-  MODIFY `id_guru` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `kuota`
---
-ALTER TABLE `kuota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `toddlers`
---
-ALTER TABLE `toddlers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `users_status`
---
-ALTER TABLE `users_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

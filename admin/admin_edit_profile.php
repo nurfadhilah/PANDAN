@@ -175,16 +175,16 @@
 								<center>
 									<table id="d02" width="628" border="1" align="center">
 										<tr style="text-align:left">
-											<td width="247">Name</td>
+											<td width="247">NAMA</td>
 											<td width="365"><input name="std_name" type="text" id="textfield"
 											                       value="<?php echo $std_name; ?>" size="50"></td>
 										</tr>
 										<tr>
-											<td>Student ID</td>
+											<td>IC </td>
 											<td><?php echo $_SESSION['SESS_USERNAME']; ?></td>
 										</tr>
 										<tr>
-											<td>Standard</td>
+											<td>UMUR</td>
 											<td><select name="standard">
 													<option disabled=disabled value="">Current Standard</option>
 													<option
@@ -199,34 +199,30 @@
 												</select></td>
 										</tr>
 										<tr>
-											<td>Student IC</td>
+											<td>EMAIL</td>
 											<td><input name="std_ic" type="text" id="textfield4"
 											           value="<?php echo $std_ic; ?>" size="50"></td>
 										</tr>
 										<tr>
-											<td>Phone Number</td>
+											<td>NO.TELEFON</td>
 											<td><input name="phone_num" type="text" id="textfield5"
 											           value="<?php echo $phone_num; ?>" size="50"></td>
 										</tr>
 										<tr>
-											<td>Address</td>
+											<td>TARIKH LAHIR</td>
 											<td><input name="address" type="text" id="textfield6"
 											           value="<?php echo $address; ?>" size="50"></td>
 										</tr>
 										<tr>
-											<td>Parent's Name</td>
-											<td><input name="parents" type="text" id="textfield7"
-											           value="<?php echo $parents; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Parent's Phone Number</td>
-											<td><input name="pnum" type="text" id="textfield8"
-											           value="<?php echo $pnum; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Email</td>
-											<td><input name="emel" type="text" id="textfield9"
-											           value="<?php echo $emel; ?>" size="50"></td>
+											<td>ALAMAT</td>
+											<td><p>
+											  <input name="parents" type="text" id="textfield7"
+											           value="<?php echo $parents; ?>" size="50">
+											</p>
+										    <p>
+										      <label for="textarea"></label>
+										      <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
+                                            </p></td>
 										</tr>
 										<tr>
 											<td></td>

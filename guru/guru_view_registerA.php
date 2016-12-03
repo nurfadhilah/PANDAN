@@ -183,6 +183,55 @@ if (isset($_GET['id'])) {
 
 <div class="wrap">
 	<div class="c-12">
+<<<<<<< HEAD
+
+
+		<h3 class="title">PAPARAN</h3>
+		<center>
+		  <table id="d03" width="1000px" border="1">
+				<tr>
+					<td><p>&nbsp;</p>
+
+						<form action="admin_edit_teacher.php?id=<?php echo $lec_id; ?>" method="post" name="details">
+							<center>
+								<table id="contact" width="527" border="1" align="center">
+									<tr style="text-align:left">
+										<td width="130">Lecturer ID</td>
+										<td width="328">&nbsp;</td>
+									</tr>
+									<tr>
+										<td background-color="#99CC33">Name</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>IC Number :</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Subject</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Phone Number :</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Address :</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Email Address :</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="submit" name="button" id="button" value="NEXT"></td>
+									</tr>
+								</table>
+							</center>
+						</form>
+=======
 		<h3 class="title">SENARAI MENUNGGU PENGESAHAN PENDAFTARAN</h3>
 		<center>
 
@@ -214,6 +263,7 @@ if (isset($_GET['id'])) {
 					</tr>
 				<?php endforeach ?>
 				</tbody>
+>>>>>>> 2d5688880e1ee950af92039996455843214a3abc
 			</table>
 		</center>
 	</div>
