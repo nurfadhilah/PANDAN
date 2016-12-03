@@ -157,47 +157,9 @@
 	<div class="c-12">
 
 
-		<h3 class="title">TEACHER'S DETAIL</h3>
-		<?php
-		include("dbase.php");
-		$idURL = $_GET['id'];
-		$query = "SELECT * FROM  lecturer WHERE lecturer_id='$idURL'";
-
-		$result = mysql_query($query, $conn);
-
-
-		$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
-
-		$lec_id = $row['lecturer_id'];
-		$lec_name = $row['lecturer_name'];
-		$subject = $row['subject'];
-		$icnum = $row['lec_ic_num'];
-		$lec_phone_num = $row['lec_phone_num'];
-		$address = $row['address'];
-		$emel = $row['email'];
-
-		if ($subject == "BM1") {
-			$sub_name = 'Bahasa Melayu (Pemahaman)';
-
-		} else if ($subject == "BM2") {
-			$sub_name = 'Bahasa Melayu (Penulisan)';
-
-		} else if ($subject == "SN") {
-			$sub_name = 'Science';
-
-		} else if ($subject == "MM") {
-			$sub_name = 'Mathematic';
-
-		} else if ($subject == "BI") {
-			$sub_name = 'English';
-
-		}
-
-
-		@mysql_free_result($result);
-		?>
+		<h3 class="title">PAPARAN</h3>
 		<center>
-			<table id="d03" width="1000px" border="1">
+		  <table id="d03" width="1000px" border="1">
 				<tr>
 					<td><p>&nbsp;</p>
 
@@ -206,31 +168,31 @@
 								<table id="contact" width="527" border="1" align="center">
 									<tr style="text-align:left">
 										<td width="130">Lecturer ID</td>
-										<td width="328"><?php echo $lec_name; ?></td>
+										<td width="328">&nbsp;</td>
 									</tr>
 									<tr>
 										<td background-color="#99CC33">Name</td>
-										<td><?php echo $lec_id; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td>IC Number :</td>
-										<td><?php echo $icnum; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td>Subject</td>
-										<td><?php echo $sub_name; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td>Phone Number :</td>
-										<td><?php echo $lec_phone_num; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td>Address :</td>
-										<td><?php echo $address; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td>Email Address :</td>
-										<td><?php echo $emel; ?></td>
+										<td>&nbsp;</td>
 									</tr>
 									<tr>
 										<td></td>

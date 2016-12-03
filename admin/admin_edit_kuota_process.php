@@ -7,7 +7,7 @@ extract($_POST);
 
 
 
-$query="UPDATE kuota SET id='$id', kelas='$kelas', guru='$guru', kuota='$kuota', WHERE id='$id'";
+$query="UPDATE kuota SET kelas='$kelas', guru='$guru', kuota='$kuota' WHERE id='$id'";
 
 $result=mysql_query($query,$conn)or die ("Could not execute query in this php");
 
@@ -15,6 +15,6 @@ $result=mysql_query($query,$conn)or die ("Could not execute query in this php");
 
 if($result){
 	
-echo"<script type='text/javascript'> window.location='admin_list_student.php'</script>";
+echo"<script type='text/javascript'> window.location='admin_view_kuota.php'</script>";
 }
 ?>

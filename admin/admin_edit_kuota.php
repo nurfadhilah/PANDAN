@@ -178,17 +178,17 @@ $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array i
 										</tr>
 										<tr>
 											<td>KELAS</td>
-											<td><input name="std_ic" type="text" id="textfield4"
+											<td><input name="kelas" type="text" id="kelas"
 											           value="<?php echo $kelas; ?>" size="50"></td>
 										</tr>
 										<tr>
 											<td>GURU</td>
-											<td><input name="std_ic" type="text" id="textfield4"
+											<td><input name="guru" type="text" id="guru"
 											           value="<?php echo $guru; ?>" size="50"></td>
 										</tr>
 										<tr>
 											<td>KUOTA</td>
-											<td><input name="phone_num" type="text" id="textfield5"
+											<td><input name="kuota" type="text" id="kuota"
 											           value="<?php echo  $kuota; ?>" size="50"></td>
 										</tr>
 										<tr>
