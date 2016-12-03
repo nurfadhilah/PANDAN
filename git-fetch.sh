@@ -1,3 +1,3 @@
-#!/bin/bash
-git pull origin master
+git fetch --all
+git reset --hard origin/master
 read -n1 -r -p "Press any key to continue..." key

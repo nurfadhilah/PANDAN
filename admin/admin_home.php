@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -214,7 +214,7 @@
 										</tr>
 										<tr>
 											<td>EDIT</td>
-											<td><input type="submit" name="button" id="button" value="EDIT"></td>
+											<td><input type="submit" name="submit" id="button" value="EDIT"></td>
 										</tr>
 									</table>
 								</center>

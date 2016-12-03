@@ -1,8 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -121,8 +122,12 @@
 		<div class="c-8">
 			<h1>PERAKUAN</h1>
 
-			<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo; <a href="home">Sample
-					Page</a> &raquo; <strong>About Full</strong></p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?> &raquo; <a href="home">Sample
+				Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
 		<div class="c-4">
@@ -180,7 +185,7 @@
 						</tr>
 						<tr>
 							<td><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="button" id="button" value="Submit"
+								<input type="submit" name="submit" id="button" value="Submit"
 								       onClick="return Validate()"/></td>
 						</tr>
 					</table>

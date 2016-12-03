@@ -157,76 +157,99 @@
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div id="content">
+<div class="wrap">
+	<div class="c-12">
 
-	<div class="wrap">
-		<div class="b8">
-			<h3>A.MAKLUMAT KANAK-KANAK</h3>
 
-			<div class="page">
+		<h3 class="title">TEACHER'S DETAIL</h3>
+		<?php
+		include("dbase.php");
+		$idURL = $_GET['id'];
+		$query = "SELECT * FROM  lecturer WHERE lecturer_id='$idURL'";
 
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
-				      id="add">
-					<table id="d01" width="636" border="1">
-						<tr>
-							<td width="130">Name Kanak-Kanak:</td>
-							<td width="428">
+		$result = mysql_query($query, $conn);
 
-								<input name="name" type="text" class="tab" id="name"/>
 
-							</td>
-						</tr>
-						<tr>
-							<td background-color="#99CC33">Tarikh Lahir :</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-						<tr>
-							<td>Umur :</td>
-							<td align="left"><select name="standard" id="select">
-									<option value="Standard 1">5 Tahun</option>
-									<option value="Standard 2">6 Tahun</option>
+		$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
 
-								</select></td>
-						</tr>
-						<tr>
-							<td>Temapt Lahir :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>No.Surat Beranak :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>NO.Mykid :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Bilangan Adik-Beradik :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Anak ke :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Alamat Surat Menyurat :</td>
-							<td>
-								<textarea name="address" id="address" cols="50" rows="5"></textarea></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="submit" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
-						</tr>
-					</table>
-				</form>
+		$lec_id = $row['lecturer_id'];
+		$lec_name = $row['lecturer_name'];
+		$subject = $row['subject'];
+		$icnum = $row['lec_ic_num'];
+		$lec_phone_num = $row['lec_phone_num'];
+		$address = $row['address'];
+		$emel = $row['email'];
 
-			</div>
-		</div>
-		<p>&nbsp;</p><!-- end sidebar -->
-	</div><!-- end wrap -->
+		if ($subject == "BM1") {
+			$sub_name = 'Bahasa Melayu (Pemahaman)';
 
+		} else if ($subject == "BM2") {
+			$sub_name = 'Bahasa Melayu (Penulisan)';
+
+		} else if ($subject == "SN") {
+			$sub_name = 'Science';
+
+		} else if ($subject == "MM") {
+			$sub_name = 'Mathematic';
+
+		} else if ($subject == "BI") {
+			$sub_name = 'English';
+
+		}
+
+
+		@mysql_free_result($result);
+		?>
+		<center>
+			<table id="d03" width="1000px" border="1">
+				<tr>
+					<td><p>&nbsp;</p>
+
+						<form action="admin_edit_teacher.php?id=<?php echo $lec_id; ?>" method="post" name="details">
+							<center>
+								<table id="contact" width="527" border="1" align="center">
+									<tr style="text-align:left">
+										<td width="130">Lecturer ID</td>
+										<td width="328"><?php echo $lec_name; ?></td>
+									</tr>
+									<tr>
+										<td background-color="#99CC33">Name</td>
+										<td><?php echo $lec_id; ?></td>
+									</tr>
+									<tr>
+										<td>IC Number :</td>
+										<td><?php echo $icnum; ?></td>
+									</tr>
+									<tr>
+										<td>Subject</td>
+										<td><?php echo $sub_name; ?></td>
+									</tr>
+									<tr>
+										<td>Phone Number :</td>
+										<td><?php echo $lec_phone_num; ?></td>
+									</tr>
+									<tr>
+										<td>Address :</td>
+										<td><?php echo $address; ?></td>
+									</tr>
+									<tr>
+										<td>Email Address :</td>
+										<td><?php echo $emel; ?></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="submit" name="submit" id="button" value="NEXT"></td>
+									</tr>
+								</table>
+							</center>
+						</form>
+			</table>
+
+
+		</center>
+		</ul>
+	</div>
 </div><!-- end content -->
 
 <div id="footer">

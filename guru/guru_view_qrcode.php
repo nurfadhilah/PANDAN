@@ -1,3 +1,13 @@
+<?php
+include_once "../DB.php";
+include_once "../vendor/phpqrcode/qrlib.php";
+
+//https://github.com/t0k4rt/phpqrcode
+QRcode::png($_GET['id'], false, 'h', 20, 1, false);
+echo '<img style="width:100px" src="' . $PNG_WEB_DIR . basename($filename) . '" />';
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -157,76 +167,13 @@
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div id="content">
+<div class="wrap">
+	<div class="c-12">
+		<h3 class="title">QRCode Murid</h3>
+		<center>
 
-	<div class="wrap">
-		<div class="b8">
-			<h3>A.MAKLUMAT KANAK-KANAK</h3>
-
-			<div class="page">
-
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
-				      id="add">
-					<table id="d01" width="636" border="1">
-						<tr>
-							<td width="130">Name Kanak-Kanak:</td>
-							<td width="428">
-
-								<input name="name" type="text" class="tab" id="name"/>
-
-							</td>
-						</tr>
-						<tr>
-							<td background-color="#99CC33">Tarikh Lahir :</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-						<tr>
-							<td>Umur :</td>
-							<td align="left"><select name="standard" id="select">
-									<option value="Standard 1">5 Tahun</option>
-									<option value="Standard 2">6 Tahun</option>
-
-								</select></td>
-						</tr>
-						<tr>
-							<td>Temapt Lahir :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>No.Surat Beranak :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>NO.Mykid :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Bilangan Adik-Beradik :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Anak ke :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Alamat Surat Menyurat :</td>
-							<td>
-								<textarea name="address" id="address" cols="50" rows="5"></textarea></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="submit" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
-						</tr>
-					</table>
-				</form>
-
-			</div>
-		</div>
-		<p>&nbsp;</p><!-- end sidebar -->
-	</div><!-- end wrap -->
-
+		</center>
+	</div>
 </div><!-- end content -->
 
 <div id="footer">

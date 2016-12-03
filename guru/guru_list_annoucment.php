@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Tadika Kemas Pandan 1</title>
+	<title>Kid`s Voice School About Full</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -132,24 +132,17 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>MAKLUMAT KANAK-KANAK</h1>
+			<h1>PENGUMUMAN</h1>
 
-			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
-				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
-			} else {
-				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo; <a href="home">Sample
+					Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
 		<div class="c-4">
 			<div class="widget widget-social">
 				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
+					<li>
+					  <h3 class="widget-title">NAMA</h3></li>
 				</ul>
 			</div>
 		</div>
@@ -159,73 +152,82 @@
 
 <div id="content">
 
-	<div class="wrap">
-		<div class="b8">
-			<h3>A.MAKLUMAT KANAK-KANAK</h3>
+	<div class="b8">
+				<h3 class="title">PENGUMUMAN <a href="report_teac.php">(LAPORAN)</a></h3>
 
-			<div class="page">
+				<div class="page">
+				  <div id="content">
 
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
-				      id="add">
-					<table id="d01" width="636" border="1">
-						<tr>
-							<td width="130">Name Kanak-Kanak:</td>
-							<td width="428">
+		  <div class="wrap">
+							<div class="b8">
+							  <div class="page"><br/>
 
-								<input name="name" type="text" class="tab" id="name"/>
 
-							</td>
-						</tr>
-						<tr>
-							<td background-color="#99CC33">Tarikh Lahir :</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-						<tr>
-							<td>Umur :</td>
-							<td align="left"><select name="standard" id="select">
-									<option value="Standard 1">5 Tahun</option>
-									<option value="Standard 2">6 Tahun</option>
 
-								</select></td>
-						</tr>
-						<tr>
-							<td>Temapt Lahir :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>No.Surat Beranak :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>NO.Mykid :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Bilangan Adik-Beradik :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Anak ke :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Alamat Surat Menyurat :</td>
-							<td>
-								<textarea name="address" id="address" cols="50" rows="5"></textarea></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="submit" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
-						</tr>
-					</table>
-				</form>
+									<center>
+										<table id="d02" width="789" border="1">
+											<tr>
+												<th width="138">NO.</th>
+												<th width="138">TARIKH</th>
+												<th width="357">TAJUK</th>
+												<th width="357">TINDAKAN</th>
+
+											</tr>
+
+									<?php
+
+									include("dbase.php");
+
+									$query = "SELECT * FROM pengumuman";
+									$result = mysql_query($query, $conn);
+
+									while ($row = mysql_fetch_array($result))
+									{
+									$id = $row["id"];
+									$tarikh = $row["tarikh"];
+									$tajuk = $row["tajuk"];
+									$pengumuman = $row["pengumuman"];
+
+									?>
+
+											<tr>
+												<td align="center" style="color:#000"><?php echo $id; ?></td>
+
+												<td background-color="#99CC33"><a href="admin_edit_kuota.php?id=<?php echo $tarikh; ?>"><?php echo $tarikh; ?></a>
+												</td>
+
+												<td bgcolor="#CC0033"><?php echo $tajuk; ?></td>
+												<td bgcolor="#CC0033"><a href="admin_edit_kuota.php?id=<?php echo $id; ?>"><?php echo $pengumuman; ?></td>
+
+															<?php } ?>
+										  </tr>
+									  </table>
+								  </center>
+												<center></center>
+							  </div>
+								<!--  end entry -->
 
 			</div>
-		</div>
-		<p>&nbsp;</p><!-- end sidebar -->
-	</div><!-- end wrap -->
+			<p>&nbsp;</p><!-- end sidebar -->
+					</div><!-- end wrap -->
+
+					</div><!-- end wrap -->
+
+				</div><!-- end content -->
+
+				<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8"/>
+
+				<div id="footer">
+					<div class="wrap">
+
+
+					</div><!-- end wrap -->
+					<center>
+						<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
+					</center>
+				</div>
+				<center></center>
+			</div><!-- end wrap -->
 
 </div><!-- end content -->
 
