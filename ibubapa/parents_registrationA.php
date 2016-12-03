@@ -4,6 +4,7 @@
 	if(isset($_POST['submit'])){
 		$toddlerModel = new DB('toddlers');
 		$_POST['toddlers']['parent_id']  = $_SESSION['user']['id'];
+		$_POST['toddlers']['status_id']  = 1;
 		if($toddlerModel->insert($_POST['toddlers']))
 			header("Location: index.php?id={$toddlerModel->getLastInsertId()}");
 			//header("Location: parents_registrationB.php?id={$toddlerModel->getLastInsertId()}");

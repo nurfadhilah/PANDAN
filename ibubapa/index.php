@@ -396,7 +396,7 @@ if (isset($_POST['submit'])) {
 					</div>
 				</form>
 
-				<h3><a href="parents_registration">Tiada Akaun? Daftar disini...</a></h3>
+				<h3><a href="parents_registration.php">Tiada Akaun? Daftar disini...</a></h3>
 			</div>
 			<!--  end widget -->
 		</div>

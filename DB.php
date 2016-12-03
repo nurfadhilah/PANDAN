@@ -7,7 +7,7 @@ class DB {
 	var $db_tableName;
 	var $db_servername = "localhost";
 	var $db_username = "root";
-	var $db_password = "password";
+	var $db_password = "";
 	var $db_dbname = "pandan";
 	var $sql = "";
 	var $is_new_record = true;
