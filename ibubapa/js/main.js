@@ -1,4 +1,5 @@
 jQuery(document).ready(function () {
+
 	var $j = jQuery.noConflict();
 
 	// INITIALIZE DROPDOWN MENU

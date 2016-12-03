@@ -229,7 +229,7 @@
 									<tr>
 										<td>Action</td>
 										<td>
-											<input type="submit" name="button" id="button" value="KEMASKINI"></td>
+											<input type="submit" name="submit" id="button" value="KEMASKINI"></td>
 									</tr>
 								</table>
 							</center>

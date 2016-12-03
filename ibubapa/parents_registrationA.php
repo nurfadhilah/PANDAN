@@ -1,4 +1,17 @@
-<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<?php //include("../admin/dbase.php") ?>
+<?php
+	include_once "../DB.php";
+	if(isset($_POST['submit'])){
+		$toddlerModel = new DB('toddlers');
+		$_POST['toddlers']['parent_id']  = $_SESSION['user']['id'];
+		if($toddlerModel->insert($_POST['toddlers']))
+			header("Location: index.php?id={$toddlerModel->getLastInsertId()}");
+			//header("Location: parents_registrationB.php?id={$toddlerModel->getLastInsertId()}");
+		else
+			d("Ralat!");
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -153,59 +166,58 @@
 
 			<div class="page">
 
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
+				<form action="parents_registrationA.php" method="post" enctype="multipart/form-data" name="add"
 				      id="add">
 					<table id="d01" width="636" border="1">
 						<tr>
-							<td width="130">Name Kanak-Kanak:</td>
+							<td width="130">Nama Kanak-Kanak:</td>
 							<td width="428">
 
-								<input name="name" type="text" class="tab" id="name"/>
+								<input name="toddlers[name]" type="text" class="tab" id="name"/>
 
 							</td>
 						</tr>
 						<tr>
 							<td background-color="#99CC33">Tarikh Lahir :</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
+							<td bgcolor="#CC0033"><input name="toddlers[dob]" type="text" class="tab" id="dob"/></td>
 						</tr>
 						<tr>
 							<td>Umur :</td>
-							<td align="left"><select name="standard" id="select">
-									<option value="Standard 1">5 Tahun</option>
-									<option value="Standard 2">6 Tahun</option>
+							<td align="left"><select name="toddlers[standard]" id="select">
+									<option value="1">5 Tahun</option>
+									<option value="2">6 Tahun</option>
 
 								</select></td>
 						</tr>
 						<tr>
 							<td>Temapt Lahir :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+							<td><input name="toddlers[birth_place]" type="text" class="tab" id="brith_place"/></td>
 						</tr>
 						<tr>
 							<td>No.Surat Beranak :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+							<td><input name="toddlers[birth_no]" type="text" class="tab" id="brith_no"/></td>
 						</tr>
 						<tr>
 							<td>NO.Mykid :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+							<td><input name="toddlers[mykid]" type="text" class="tab" id="mykid"/></td>
 						</tr>
 						<tr>
 							<td>Bilangan Adik-Beradik :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+							<td><input name="toddlers[sibling_count]" type="text" class="tab" id="sibling_count"/></td>
 						</tr>
 						<tr>
 							<td>Anak ke :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+							<td><input name="toddlers[sibling_index]" type="text" class="tab" id="sibling_index"/></td>
 						</tr>
 						<tr>
 							<td>Alamat Surat Menyurat :</td>
 							<td>
-								<textarea name="address" id="address" cols="50" rows="5"></textarea></td>
+								<textarea name="toddlers[address]" id="address" cols="50" rows="5"></textarea></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
 							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="button" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
+								<input type="submit" name="submit" id="button" value="Submit" /></td>
 						</tr>
 					</table>
 				</form>

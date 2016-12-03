@@ -182,7 +182,7 @@
 						<tr>
 							<td>&nbsp;</td>
 							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Semula"/>
-								<input type="submit" name="button" id="button" value="Hantar"></td>
+								<input type="submit" name="submit" id="button" value="Hantar"></td>
 						</tr>
 					</table>
 				</form>

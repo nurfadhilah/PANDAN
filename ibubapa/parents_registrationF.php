@@ -278,7 +278,7 @@
 		</tr>
 
 		<tr>
-			<td>STANDARD 4 <a href="print4.php">(Print)</a></td>
+			<td>STANDARD 7 <a href="print7.php">(Print)</a></td>
 
 
 		</tr>

@@ -214,7 +214,7 @@
 										</tr>
 										<tr>
 											<td>EDIT</td>
-											<td><input type="submit" name="button" id="button" value="EDIT"></td>
+											<td><input type="submit" name="submit" id="button" value="EDIT"></td>
 										</tr>
 									</table>
 								</center>

@@ -244,7 +244,7 @@
 							<td>&nbsp;</td>
 							<td colspan="3" style="text-align:right"><input type="reset" name="reset" id="button"
 							                                                value="Reset"/>
-								<input type="submit" name="button" id="button" value="Submit"
+								<input type="submit" name="submit" id="button" value="Submit"
 								       onClick="return Validate()"/></td>
 						</tr>
 					</table>

@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 		if ($row['email'] == $email && $row['password'] == md5($password)) {
 			$_SESSION['user'] = $row;
 			echo "<script>alert('Selamat datang {$_SESSION['user']['username']}!')</script>";
-			echo "<script>setTimeout(function(){window.location.href = 'about_Parents.php'}, 1000)</script>";
+			echo "<script>setTimeout(function(){window.location.href = 'parents_registrationA.php'}, 1000)</script>";
 		} else {
 			echo "<script>alert('Tiada maklumat ditemui!')</script>";
 		}
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -370,7 +370,7 @@ if (isset($_POST['submit'])) {
 					<h3>Log In</h3>
 
 					<div>
-						<label>Username:</label>
+						<label>Email:</label>
 						<input type="email" name="email" placeholder="Email"/>
 					</div>
 					<div>

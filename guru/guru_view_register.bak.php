@@ -1,24 +1,3 @@
-<?php
-include_once "../DB.php";
-
-$_GET['id'] = 1;
-if(isset($_POST['submit'])){
-	$id = $_GET['id'];
-
-	$toddlerModel = new DB('toddlers');
-	$toddler = $toddlerModel->findOne($id);
-	$toddler->status_id = $_POST['submit'];
-	$toddlerModel->update($toddler);
-
-
-}
-
-if (isset($_GET['id'])) {
-	$id = $_GET['id'];
-	$toddlers = (new DB('toddlers'))->findAll("status_id=1");
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -180,39 +159,96 @@ if (isset($_GET['id'])) {
 
 <div class="wrap">
 	<div class="c-12">
-		<h3 class="title">SENARAI MENUNGGU PENGESAHAN PENDAFTARAN</h3>
-		<center>
 
-			<table>
-				<thead>
+
+		<h3 class="title">TEACHER'S DETAIL</h3>
+		<?php
+		include("dbase.php");
+		$idURL = $_GET['id'];
+		$query = "SELECT * FROM  lecturer WHERE lecturer_id='$idURL'";
+
+		$result = mysql_query($query, $conn);
+
+
+		$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
+
+		$lec_id = $row['lecturer_id'];
+		$lec_name = $row['lecturer_name'];
+		$subject = $row['subject'];
+		$icnum = $row['lec_ic_num'];
+		$lec_phone_num = $row['lec_phone_num'];
+		$address = $row['address'];
+		$emel = $row['email'];
+
+		if ($subject == "BM1") {
+			$sub_name = 'Bahasa Melayu (Pemahaman)';
+
+		} else if ($subject == "BM2") {
+			$sub_name = 'Bahasa Melayu (Penulisan)';
+
+		} else if ($subject == "SN") {
+			$sub_name = 'Science';
+
+		} else if ($subject == "MM") {
+			$sub_name = 'Mathematic';
+
+		} else if ($subject == "BI") {
+			$sub_name = 'English';
+
+		}
+
+
+		@mysql_free_result($result);
+		?>
+		<center>
+			<table id="d03" width="1000px" border="1">
 				<tr>
-					<th>Bil</th>
-					<th>Nama</th>
-					<th>MyKID</th>
-					<th>Umur</th>
-					<th>Penjaga</th>
-					<th>Tindakan</th>
-				</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($toddlers as $i => $toddler): ?>
-					<tr>
-						<td><?= $i + 1 ?></td>
-						<td><?= $toddler->name ?></td>
-						<td><?= $toddler->mykid ?></td>
-						<td><?= ($toddler->standard == 1) ? 5 : 6 ?></td>
-						<td><?= (new DB('users'))->findOne($toddler->parent_id)->username ?></td>
-						<td>
-							<form action="guru_view_registerA.php?id=<?=$toddler->id?>" method="post" enctype="multipart/form-data">
-								<button type="submit" name="submit" value="2">Sah</button>
-								<button type="submit" name="submit" value="1">Tidak Sah</button>
-							</form>
-						</td>
-					</tr>
-				<?php endforeach ?>
-				</tbody>
+					<td><p>&nbsp;</p>
+
+						<form action="admin_edit_teacher.php?id=<?php echo $lec_id; ?>" method="post" name="details">
+							<center>
+								<table id="contact" width="527" border="1" align="center">
+									<tr style="text-align:left">
+										<td width="130">Lecturer ID</td>
+										<td width="328"><?php echo $lec_name; ?></td>
+									</tr>
+									<tr>
+										<td background-color="#99CC33">Name</td>
+										<td><?php echo $lec_id; ?></td>
+									</tr>
+									<tr>
+										<td>IC Number :</td>
+										<td><?php echo $icnum; ?></td>
+									</tr>
+									<tr>
+										<td>Subject</td>
+										<td><?php echo $sub_name; ?></td>
+									</tr>
+									<tr>
+										<td>Phone Number :</td>
+										<td><?php echo $lec_phone_num; ?></td>
+									</tr>
+									<tr>
+										<td>Address :</td>
+										<td><?php echo $address; ?></td>
+									</tr>
+									<tr>
+										<td>Email Address :</td>
+										<td><?php echo $emel; ?></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="submit" name="submit" id="button" value="NEXT"></td>
+									</tr>
+								</table>
+							</center>
+						</form>
 			</table>
+
+
 		</center>
+		</ul>
 	</div>
 </div><!-- end content -->
 
