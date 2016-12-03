@@ -1,6 +1,8 @@
 <?php
 include_once "../DB.php";
+include_once "../vendor/phpqrcode/qrlib.php";
 
+$qrcode_img = '';
 $_GET['id'] = 1;
 if(isset($_POST['submit'])){
 	$id = $_GET['id'];
@@ -9,8 +11,9 @@ if(isset($_POST['submit'])){
 	$toddler = $toddlerModel->findOne($id);
 	$toddler->status_id = $_POST['submit'];
 	$toddlerModel->update($toddler);
+	sendSMS('+60196896594', 'Pendaftaran anda telah diluluskan! -Tadika Kemas Pandan 1');
 
-
+	header("Location: guru_view_qrcode.php?id=$toddler->id");
 }
 
 if (isset($_GET['id'])) {
@@ -23,7 +26,7 @@ if (isset($_GET['id'])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>

@@ -1,3 +1,13 @@
+<?php
+include_once "../DB.php";
+include_once "../vendor/phpqrcode/qrlib.php";
+
+//https://github.com/t0k4rt/phpqrcode
+QRcode::png($_GET['id'], false, 'h', 20, 1, false);
+echo '<img style="width:100px" src="' . $PNG_WEB_DIR . basename($filename) . '" />';
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -75,29 +85,45 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HALAMAN UTAMA</a>
+				<li><a href="admin_view_sub.php" title="Subject">pendaftara</a>
+
+					<ul>
+						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
+						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+
+					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-
-				<li><a title="Teacher">GURU</a>
+				<li>
+					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Teacher">Attendance</a>
+					<ul>
+						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
+						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">LAIN</a>
+				<li><a title="Result">Others</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftra Keluar</a></li>
+
+						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
+						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
+						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
+						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
 
 					</ul>
 
@@ -116,17 +142,24 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>KUOTA </h1>
+			<h1>MAKLUMAT KANAK-KANAK</h1>
 
-			<p class="breadcrumbs">Anda Disini :<strong> K</strong>EMASKINI KUOTA</p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?> &raquo; <a href="home">Sample
+				Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
 		<div class="c-4">
 			<div class="widget widget-social">
 				<ul>
-					<li>
-						<h3 class="widget-title">NAMA</h3></li>
-					<li></li>
+					<li><h3 class="widget-title">Kids voice social</h3></li>
+					<li><a class="twitter-intro" title="" href="#"></a></li>
+					<li><a class="facebook-intro" title="" href="#"></a></li>
+					<li><a class="social-intro" title="" href="#"></a></li>
+					<li><a class="rss-intro" title="" href="#"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -134,134 +167,28 @@
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div id="content">
-	<<<<<<< HEAD
+<div class="wrap">
+	<div class="c-12">
+		<h3 class="title">QRCode Murid</h3>
+		<center>
 
-	<div id="content">
+		</center>
+	</div>
+</div><!-- end content -->
 
-		<div class="wrap">
-			<div class="b8">
-				<h3 class="title">KUOTA KELAS <a href="report_teac.php">(LAPORAN)</a></h3>
-
-				<div class="page"><br/>
-
-					=======
-
-					<div id="content">
-
-						<div class="wrap">
-							<div class="b8">
-								<h3 class="title">KUOTA KELAS <a href="report_teac.php">(LAPORAN)</a></h3>
-
-								<div class="page"><br/>
-
-									<?php
-
-									include("dbase.php");
-
-									$query = "SELECT * FROM kuota";
-									$result = mysql_query($query, $conn);
-
-									while ($row = mysql_fetch_array($result))
-									{
-									$id = $row["id"];
-									$kelas = $row["kelas"];
-									$guru = $row["guru"];
-									$kuota = $row["kuota"];
-
-									?>
-
-									<center>
-										<table id="d02" width="789" border="1">
-											<tr>
-												<th width="138">NO.</th>
-												<th width="138">KELAS</th>
-												<th width="357">GURU</th>
-												<th width="357">KUOTA</th>
-
-											</tr>
-
-											<tr>
-												<td align="center" style="color:#000"><?php echo $id; ?></td>
-
-												<td background-color="#99CC33"><a
-														href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a>
-												</td>
-
-												<td bgcolor="#CC0033"><?php echo $guru; ?></td>
-												<td bgcolor="#CC0033"><?php echo $kuota; ?></td>
+<div id="footer">
+	<div class="wrap">
 
 
-												>>>>>>> 43182c966b31d705d36a6a8a85fbbe6c5e3908ed
-												<?php
+	</div><!-- end wrap -->
+	<center>
+		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
+	</center>
+</div>
+<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
-												include("dbase.php");
-
-												$query = "SELECT * FROM kuota";
-												$result = mysql_query($query, $conn);
-
-												while ($row = mysql_fetch_array($result))
-												{
-												$id_kuota = $row["id_kuota"];
-												$kelas = $row["kelas"];
-												$guru = $row["guru"];
-												$kuota = $row["kuota"];
-
-												?>
-
-												<center>
-													<table id="d02" width="789" border="1">
-														<tr>
-															<th width="138">NO.</th>
-															<th width="138">KELAS</th>
-															<th width="357">GURU</th>
-															<th width="357">KUOTA</th>
-
-														</tr>
-
-														<tr>
-															<td align="center"
-															    style="color:#000"><?php echo $id_kuota; ?></td>
-
-															<td background-color="#99CC33"><a
-																	href="admin_view_guru.php?id=<?php echo $kelas; ?>"><?php echo $kelas; ?></a>
-															</td>
-
-															<td bgcolor="#CC0033"><?php echo $guru; ?></td>
-															<td bgcolor="#CC0033"><?php echo $kuota; ?></td>
-
-
-															<?php
-															}
-															?>
-														</tr>
-													</table>
-												</center>
-												<center></center>
-								</div>
-								<!--  end entry -->
-
-							</div>
-							<p>&nbsp;</p><!-- end sidebar -->
-						</div><!-- end wrap -->
-
-					</div><!-- end wrap -->
-
-				</div><!-- end content -->
-
-				<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8"/>
-
-				<div id="footer">
-					<div class="wrap">
-
-
-					</div><!-- end wrap -->
-					<center>
-						<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
-					</center>
-				</div>
-				<center></center>
-			</div><!-- end footer -->
+<center></center>
+</div><!-- end footer -->
 
 </body>
 </html>
