@@ -1,8 +1,32 @@
+<?php
+include_once "../DB.php";
+include_once "../vendor/phpqrcode/qrlib.php";
+
+$qrcode_img = '';
+$_GET['id'] = 1;
+if(isset($_POST['submit'])){
+	$id = $_GET['id'];
+
+	$toddlerModel = new DB('toddlers');
+	$toddler = $toddlerModel->findOne($id);
+	$toddler->status_id = $_POST['submit'];
+	$toddlerModel->update($toddler);
+	sendSMS('+60196896594', 'Pendaftaran anda telah diluluskan! -Tadika Kemas Pandan 1');
+
+	header("Location: guru_view_qrcode.php?id=$toddler->id");
+}
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+	$toddlers = (new DB('toddlers'))->findAll("status_id=1");
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -134,8 +158,12 @@
 		<div class="c-8">
 			<h1>MAKLUMAT KANAK-KANAK</h1>
 
-			<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo; <a href="home">Sample
-					Page</a> &raquo; <strong>About Full</strong></p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?> &raquo; <a href="home">Sample
+				Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
 		<div class="c-4">
@@ -155,6 +183,7 @@
 
 <div class="wrap">
 	<div class="c-12">
+<<<<<<< HEAD
 
 
 		<h3 class="title">PAPARAN</h3>
@@ -202,11 +231,41 @@
 								</table>
 							</center>
 						</form>
+=======
+		<h3 class="title">SENARAI MENUNGGU PENGESAHAN PENDAFTARAN</h3>
+		<center>
+
+			<table>
+				<thead>
+				<tr>
+					<th>Bil</th>
+					<th>Nama</th>
+					<th>MyKID</th>
+					<th>Umur</th>
+					<th>Penjaga</th>
+					<th>Tindakan</th>
+				</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($toddlers as $i => $toddler): ?>
+					<tr>
+						<td><?= $i + 1 ?></td>
+						<td><?= $toddler->name ?></td>
+						<td><?= $toddler->mykid ?></td>
+						<td><?= ($toddler->standard == 1) ? 5 : 6 ?></td>
+						<td><?= (new DB('users'))->findOne($toddler->parent_id)->username ?></td>
+						<td>
+							<form action="guru_view_registerA.php?id=<?=$toddler->id?>" method="post" enctype="multipart/form-data">
+								<button type="submit" name="submit" value="2">Sah</button>
+								<button type="submit" name="submit" value="1">Tidak Sah</button>
+							</form>
+						</td>
+					</tr>
+				<?php endforeach ?>
+				</tbody>
+>>>>>>> 2d5688880e1ee950af92039996455843214a3abc
 			</table>
-
-
 		</center>
-		</ul>
 	</div>
 </div><!-- end content -->
 

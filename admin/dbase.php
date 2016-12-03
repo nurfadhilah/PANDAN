@@ -14,5 +14,7 @@ mysql_select_db("pandan", $conn) or die("Could not open product database");
 
 //set the default time zone to use in Malaysia
 date_default_timezone_set('Asia/Kuala_Lumpur');
+
+	session_start();
 ?>
 
