@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -67,60 +70,71 @@
 		<li><a class="Yellow-Orange" rel="styles/Yellow-Orange/yellow-orange.css" href="#"></a></li>
 		<li><a class="Yellow-Purple" rel="styles/Yellow-Purple/yellow-purple.css" href="#"></a></li>
 	</ul>
-
 	<div class="wrap">
-		<h1><a href="../../AGL_all/index.php" title=""></a></h1><!-- logo -->
 
-		<!-- ---------------------------------------------MENU--------------------------------------------------- -->
+		<h1>LOGO TADIKA</h1>
+
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li class="current-menu-item"><a href="../../AGL_all/index.php" title="Home Page">Home</a></li>
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/about.php" title="About">About Us</a></li>
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/contact.php" title="Contact">Contact Us</a></li>
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="#loginForm" title="Log In">Log In</a></li>
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				</li>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
-				<li><a href="#loginForm" title="Log In">Sign Up</a></li>
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-
-			</ul><!-- end dd-menu// -->
-		</div><!-- end main-navigation -->
-	</div>
-	<div id="intro">
-		<div class="wrap">
-
-			<div class="c-8">
-				<h1>HOME </h1>
-
-				<p class="breadcrumbs">You are here:<strong>Home</strong></p>
-			</div>
-
-			<div class="c-4">
-				<div class="widget widget-social">
 					<ul>
-						<li><a class="twitter-intro" title="" href="#"></a></li>
-						<li><a class="facebook-intro" title="" href="#"></a></li>
-						<li><a class="social-intro" title="" href="#"></a></li>
-						<li><a class="rss-intro" title="" href="#"></a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
+
 					</ul>
-				</div>
-			</div>
+				</li>
 
-		</div><!-- end wrap -->
-	</div>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li>
+					<a href="" title="Schedule">BAYARAN</a>
+					<ul>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Teacher">KEDATANGAN</a>
+					<ul>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
-	<div class="wrap">
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
 
-		<h1>&nbsp;</h1>
+					</ul>
+				</li>
 
-		<div id="main-navigation"><!-- end dd-menu -->
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Result">LAIN</a>
+					<ul>
+
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
+
+					</ul>
+
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+			</ul>
+			<!-- end dd-menu -->
 
 		</div><!-- end main-navigation -->
+
 
 	</div><!-- end wrap -->
 </div><!-- end header -->
@@ -166,14 +180,20 @@
 
 			<div class="c-4">
 				<div id="cat-slider">
-					<h2>OUR PROGRAM</h2>
+					<h2>PENGUMUMAN</h2>
 					<span class="devider"></span>
 
 					<div id="scroller">
 						<ul>
-							<li><h3><a href="#" title="Infant">Infant</a></h3>Lorem ipsum dolor sit amet sit amet</li>
-							<li><h3><a href="#" title="Infant">Pre-toddlers</a></h3>Lorem ipsum dolor sit amet</li>
-							<li><h3><a href="#" title="Infant">Toddlers</a></h3>Lorem ipsum dolor sit amet</li>
+							<li>
+							  <h3><a href="#" title="Infant">1</a>							</h3>
+							</li>
+					    <li>
+					      <h3><a href="#" title="Infant">2</a></h3>
+					      SUKANEKA</li>
+							<li>
+							  <h3><a href="#" title="Infant">3</a></h3>
+							  GOTONG ROYONG</li>
 						</ul>
 						<ul>
 							<li><h3><a href="#" title="Infant">Infant 1</a></h3>Lorem ipsum dolor sit amet sit amet</li>
@@ -204,18 +224,9 @@
 				<div class="wrap">
 					<div class="b8">
 						<div class="page">
-							<h2>ABOUT ANGEL TUITION CENTRE</h2>
+							<h2>TENTANG TADIKA KEMAS</h2>
 
-							<p>Angel tuition centre was founded by Angel a/p Mariadass in 2015 through FSKKP UMP
-								Department licence. The mission of Angel Tuition Centre is to provide primary school
-								student and their parents with the best possible care while providing enough facilities
-								from aspect education, knowledge and learning environment. Our goal also to allow
-								children enhance their development through interaction and exploration by incorporation
-								developmentally an appropriate curriculum. Our teachers are dedicated and know exactly
-								how to guide student to fulfill their maximum learning potential with enough
-								facilities.</p>
-							<a class="read-more"><span class="circle-arrow"></span></a>
-						</div><!-- end page-->
+							<p>Tadika Kemas Pandan 1 adalah tadika di bawah seliaan KEMAS.</p></div><!-- end page-->
 					</div><!-- end b8-->
 
 					<!-- end b4-->
@@ -229,8 +240,8 @@
 		<div class="wrap">
 
 			<div class="c-4">
-				<h3>OUR TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL KAMI</h3>
+				<h4>Huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0000_.jpg" rel="example_group">
@@ -238,13 +249,12 @@
 						<img src="assets/slider_asset__0000_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>FOOD TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL MAKANAN</h3>
+				<h4>huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0001_.jpg" rel="example_group">
@@ -252,13 +262,12 @@
 						<img src="assets/slider_asset__0001_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>ACTIVITY TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL AKTIVITI</h3>
+				<h4>huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0002_.jpg" rel="example_group">
@@ -337,12 +346,12 @@
 		</div>
 		<div class="c-3">
 			<div id="form_wrapper" class="form_wrapper">
-				<form id="loginForm" name="loginForm" onsubmit="return Validate()" method="post" class="login active">
+				<form id="loginForm" name="loginForm" method="post" class="login active" action="index.php">
 					<h3>Log In</h3>
 
 					<div>
-						<label>Username:</label>
-						<input type="text" name="username" placeholder="Username"/>
+						<label>Email:</label>
+						<input type="email" name="email" placeholder="Email"/>
 					</div>
 					<div>
 						<label>Password:</label>
@@ -352,20 +361,22 @@
 						<label>Category : </label>
 						<select name="leveling" style="width:200px; font-size:14px; height:35px">
 							<option value="">Categories</option>
-							<option value="Admin">Admin</option>
-							<option value="Student">Student/ibubapa</option>
+							<option value="Admin">Guru</option>
+							<option value="Student">Ibu Bapa/Pelajar</option>
 						</select>
 						<br>
 					</div>
 					<div class="bottom">
 						<div class="remember">
 							<p>
-								<input name="Submit" type="submit" onclick="return LoginCategory()" value="Log In"/>
+								<input name="submit" type="submit" value="Log In"/>
 
 						</div>
 						<div class="clear"></div>
 					</div>
 				</form>
+
+				<h3><a href="parents_registration.php">Tiada Akaun? Daftar disini...</a></h3>
 			</div>
 			<!--  end widget -->
 		</div>

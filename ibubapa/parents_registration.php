@@ -70,38 +70,38 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>&nbsp;</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Home</a>
+				<li><a href="parents_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Registration</a>
+					<a href="parents_registrationA.php" title="Schedule">PENDAFTARAN</a>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Payment</a>
+				<li><a title="Teacher">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Registration fee</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Monthly fee</a></li>
+						<li><a href="parent_bayaranpendaftaran.php" title="Add Teacher">PENDAFTARAN</a></li>
+						<li><a href="parents_bayaranbulanan.php" title="List of Teacher">YURAN BULANAN</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Attendance</a>
+					<a href="parents_attendanceA.php" title="Schedule">KEDATANGAN</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="parents_home.php" title="Mid Term">PROFIL</a></li>
+						<li><a href="parents_changepassword.php" title="Final Exam">TUKAR PASSWORD</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -126,21 +126,10 @@
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->

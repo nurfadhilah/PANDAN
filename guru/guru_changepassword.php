@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -140,7 +141,7 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>HOME</h1>
+			<h1>TUKAR KATALALUAN</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
@@ -149,116 +150,61 @@
 			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li>
-						<h3 class="widget-title">NAMA</h3></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
+<div class="wrap">
+	<center><h3>TUKAR KATALALUAN</h3></center>
+	<div class="b8">
+		<h1>
+			<center>
+			</center>
+		</h1>
 
-<div id="content"><!-- end wrap -->
+		<table id="d03" border="1" width="999">
+			<tr>
+				<td>
+					<center>
+						<form name="add" method="post" action="changePassword_process.php">
+							<table width="322" id="password" style="background:#FFFFFF">
+								<tr bgcolor="#FFFFFF">
+									<td width="166" height="26" valign="top" bgcolor="white"><strong>KATALALUAN LAMA</strong></td>
+									<td width="144" valign="top" bgcolor="white">&nbsp;
+										<input name="student_matric" type="password" size="10"/></td>
+								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td height="27" valign="top" bgcolor="white"><strong>KATALALUAN BARU</strong>
+									</td>
+									<td bgcolor="white">&nbsp;
+										<input name="student_name" type="password" size="10"/></td>
+								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td height="26" valign="top" bgcolor="white"><strong>&nbsp;SAHKAN KATALALUAN</strong>
+									</td>
+									<td align="left" valign="top" bgcolor="white">&nbsp;
+										<input name="student_name2" type="password" size="10"/></td>
+								</tr>
+								<tr bgcolor="#FFFFFF">
+									<td colspan="2" height="36" valign="top" bgcolor="white"><input align="center"
+									                                                                name="add2"
+									                                                                type="submit"
+									                                                                value="KEMASKINI"
+									                                                               />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</center>
+				</td>
+			</tr>
+		</table>
 
-</div>
+		<p></p>
+		<!--  end page -->
 
-<div id="content">
-
-	<div class="wrap">
-		<div class="b8">
-			<h3 class="title">MASUKKAN BUTIRAN BAYARAN</h3>
-
-			<p><span class="c-12">
-               <?php
-               include("dbase.php");
-               $query = "SELECT * FROM  std_info WHERE std_id = '" . $_SESSION['SESS_USERNAME'] . "'";
-
-               $result = mysql_query($query, $conn);
-
-
-               $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
-
-               $std_id = $row['std_id'];
-               $std_name = $row['std_name'];
-               $standard = $row['standard'];
-               $std_ic = $row['std_ic'];
-               $phone_num = $row['phone_num'];
-               $address = $row['address'];
-               $parents = $row['parent_name'];
-               $pnum = $row['parent_phone'];
-               $emel = $row['email'];
-               $sickness = $row['sickness'];
-
-               @mysql_free_result($result);
-               ?>
-             </span></p>
-
-			<div class="page">
-				<table id="d03" width="1000px" border="1">
-					<tr>
-						<td><p>&nbsp;</p>
-
-							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
-							      method="post" name="details">
-								<center>
-								  <table id="d02" width="628" border="1" align="center">
-										<tr style="text-align:left">
-											<td width="247">NAMA</td>
-											<td width="365"><input name="std_name" type="text" id="textfield"
-											                       value="" size="50"></td>
-										</tr>
-										<tr>
-											<td>MYKIDS</td>
-											<td><input name="std_name" type="text" id="textfield"
-											                       value="" size="50"></td>
-										</tr>
-										<tr>
-											<td>KELAS</td>
-											<td><select name="standard">
-													<option disabled=disabled value="">KELAS</option>
-													<option
-														value="<?php echo $standard ?>"><?php echo $standard ?></option>
-													<option disabled=disabled value="">KELAS</option>
-													<option value="Standard 1">5 TAHUN</option>
-													<option value="Standard 2">6 TAHUN</option>
-																							</select></td>
-										</tr>
-										<tr>
-											<td>UMUR</td>
-											<td><input name="std_ic" type="text" id="textfield4"
-											           value="" size="50"></td>
-										</tr>
-										<tr>
-											<td>BAYARAN (RM)</td>
-											<td><input name="phone_num" type="text" id="textfield5"
-											           value="" size="50"></td>
-										</tr>
-										<tr>
-											<td>STATUS</td>
-											<td><input name="address" type="text" id="textfield6"
-											           value="" size="50"></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td align="right"><a href="guru_list2_paymentB.php?id=<?php echo $id; ?>"><input type="submit" name="button2" id="button2"
-											                         value="Simpan">
-												<input name="std_id" type="hidden" id="textfield3"
-												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
-										</tr>
-									</table>
-								</center>
-							</form>
-				</table>
-			</div><!--  end page -->
-
-		</div>
-		<div class="b4 sidebar"></div><!-- end sidebar -->
-	</div><!-- end wrap -->
-
+	</div>
+	<div class="b4 sidebar"></div><!-- end sidebar -->
 </div><!-- end content -->
 
 <div id="footer">

@@ -75,29 +75,29 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HALAMAN UTAMA</a>
+				<li><a href="admin_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
 				<li><a title="Teacher">GURU</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="admin_add_guru.php" title="Add Teacher">Tambah Guru</a></li>
+						<li><a href="admin_list_guru.php" title="List of Teacher">Senarai Guru</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="admin_view_kuota.php" title="Schedule">KUOTA</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftra Keluar</a></li>
+						<li><a href="admin_home.php" title="Mid Term">Profil</a></li>
+						<li><a href="admin_change_password.php" title="Final Exam">Tukar Katalaluan</a></li>
+						<li><a href="index.php" title="Full Result">Daftra Keluar</a></li>
 
 					</ul>
 

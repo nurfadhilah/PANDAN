@@ -75,29 +75,29 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HALAMAN UTAMA</a>
+				<li><a href="admin_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
 				<li><a title="Teacher">GURU</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="admin_add_guru.php" title="Add Teacher">Tambah Guru</a></li>
+						<li><a href="admin_list_guru.php" title="List of Teacher">Senarai Guru</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="admin_view_kuota.php" title="Schedule">KUOTA</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftra Keluar</a></li>
+						<li><a href="admin_home.php" title="Mid Term">Profil</a></li>
+						<li><a href="admin_change_password.php" title="Final Exam">Tukar Katalaluan</a></li>
+						<li><a href="index.php" title="Full Result">Daftra Keluar</a></li>
 
 					</ul>
 
@@ -140,30 +140,7 @@
 		<div class="b8">
 			<h3 class="title">PROFIL SAYA</h3>
 
-			<p><span class="c-12">
-               <?php
-               include("dbase.php");
-               $query = "SELECT * FROM  std_info WHERE std_id = '" . $_SESSION['SESS_USERNAME'] . "'";
-
-               $result = mysql_query($query, $conn);
-
-
-               $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
-
-               $std_id = $row['std_id'];
-               $std_name = $row['std_name'];
-               $standard = $row['standard'];
-               $std_ic = $row['std_ic'];
-               $phone_num = $row['phone_num'];
-               $address = $row['address'];
-               $parents = $row['parent_name'];
-               $pnum = $row['parent_phone'];
-               $emel = $row['email'];
-               $sickness = $row['sickness'];
-
-               @mysql_free_result($result);
-               ?>
-             </span></p>
+			<p>&nbsp;</p>
 
 			<div class="page">
 				<table id="d03" width="1000px" border="1">
@@ -176,52 +153,35 @@
 									<table id="d02" width="628" border="1" align="center">
 										<tr style="text-align:left">
 											<td width="247">NAMA</td>
-											<td width="365"><input name="std_name" type="text" id="textfield"
-											                       value="<?php echo $std_name; ?>" size="50"></td>
+											<td width="365">&nbsp;</td>
 										</tr>
 										<tr>
 											<td>IC </td>
-											<td><?php echo $_SESSION['SESS_USERNAME']; ?></td>
+											<td>&nbsp;</td>
 										</tr>
 										<tr>
 											<td>UMUR</td>
-											<td><select name="standard">
-													<option disabled=disabled value="">Current Standard</option>
-													<option
-														value="<?php echo $standard ?>"><?php echo $standard ?></option>
-													<option disabled=disabled value="">Change to</option>
-													<option value="Standard 1">Standard1</option>
-													<option value="Standard 2">Standard2</option>
-													<option value="Standard 3">Standard3</option>
-													<option value="Standard 4">Standard4</option>
-													<option value="Standard 5">Standard5</option>
-													<option value="Standard 6">Standard6</option>
-												</select></td>
+											<td>&nbsp;</td>
 										</tr>
 										<tr>
 											<td>EMAIL</td>
 											<td><input name="std_ic" type="text" id="textfield4"
-											           value="<?php echo $std_ic; ?>" size="50"></td>
+											           value="" size="50"></td>
 										</tr>
 										<tr>
 											<td>NO.TELEFON</td>
 											<td><input name="phone_num" type="text" id="textfield5"
-											           value="<?php echo $phone_num; ?>" size="50"></td>
+											           value="" size="50"></td>
 										</tr>
 										<tr>
 											<td>TARIKH LAHIR</td>
 											<td><input name="address" type="text" id="textfield6"
-											           value="<?php echo $address; ?>" size="50"></td>
+											           value="" size="50"></td>
 										</tr>
 										<tr>
 											<td>ALAMAT</td>
 											<td><p>
-											  <input name="parents" type="text" id="textfield7"
-											           value="<?php echo $parents; ?>" size="50">
-											</p>
-										    <p>
-										      <label for="textarea"></label>
-										      <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
+											  <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
                                             </p></td>
 										</tr>
 										<tr>

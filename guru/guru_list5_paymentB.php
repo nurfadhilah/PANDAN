@@ -69,51 +69,59 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>LOGO TADIKA</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Registration</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
 
 					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Attendance</a>
+				<li><a title="Teacher">KEDATANGAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
 
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -132,7 +140,7 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>MAKLUMAT AM </h1>
+			<h1>HOME</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
@@ -142,113 +150,114 @@
 				Page</a> &raquo; <strong>About Full</strong></p>
 		</div>
 
-		<div class="c-4"></div>
+		<div class="c-4">
+			<div class="widget widget-social">
+				<ul>
+					<li>
+						<h3 class="widget-title">NAMA</h3></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
+
+<div id="content"><!-- end wrap -->
+
+</div>
 
 <div id="content">
 
 	<div class="wrap">
 		<div class="b8">
-			<h3>D.MAKLUMAT AM KANAK-KANAK</h3>
+			<h3 class="title">KEMASKINI BAYARAN</h3>
+
+			<p><span class="c-12">
+               <?php
+               include("dbase.php");
+               $query = "SELECT * FROM  std_info WHERE std_id = '" . $_SESSION['SESS_USERNAME'] . "'";
+
+               $result = mysql_query($query, $conn);
+
+
+               $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
+
+               $std_id = $row['std_id'];
+               $std_name = $row['std_name'];
+               $standard = $row['standard'];
+               $std_ic = $row['std_ic'];
+               $phone_num = $row['phone_num'];
+               $address = $row['address'];
+               $parents = $row['parent_name'];
+               $pnum = $row['parent_phone'];
+               $emel = $row['email'];
+               $sickness = $row['sickness'];
+
+               @mysql_free_result($result);
+               ?>
+             </span></p>
 
 			<div class="page">
+				<table id="d03" width="1000px" border="1">
+					<tr>
+						<td><p>&nbsp;</p>
 
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
-				      id="add">
-					<table id="d01" width="636" border="1">
-						<tr>
-							<td width="130">Jenis Permainan Digemari :</td>
-							<td width="428">
+							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
+							      method="post" name="details">
+								<center>
+									<table id="d02" width="628" border="1" align="center">
+										<tr style="text-align:left">
+											<td width="247">NAMA</td>
+											<td width="365"><input name="std_name" type="text" id="textfield"
+											                       value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>MYKIDS</td>
+											<td><input name="std_name" type="text" id="textfield"
+											                       value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>KELAS</td>
+											<td><select name="standard">
+													<option disabled=disabled value="">KELAS</option>
+													<option
+														value="<?php echo $standard ?>"><?php echo $standard ?></option>
+													<option disabled=disabled value="">KELAS</option>
+													<option value="Standard 1">5 TAHUN</option>
+													<option value="Standard 2">6 TAHUN</option>
+																							</select></td>
+										</tr>
+										<tr>
+											<td>UMUR</td>
+											<td><input name="std_ic" type="text" id="textfield4"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>BAYARAN (RM)</td>
+											<td><input name="phone_num" type="text" id="textfield5"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>STATUS</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td align="right"><a href="guru_list4_paymentB.php?id=<?php echo $id; ?>"><input type="submit" name="button2" id="button2"
+											                         value="Simpan">
+												<input name="std_id" type="hidden" id="textfield3"
+												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
+										</tr>
+									</table>
+								</center>
+							</form>
+				</table>
+			</div><!--  end page -->
 
-								<input name="name" type="text" class="tab" id="name"/>
-
-							</td>
-						</tr>
-						<tr>
-							<td background-color="#99CC33">Kerja-Kerja Rumah Digemari:</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-
-						<tr>
-							<td background-color="#99CC33">Makanan Yang Disukai:</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-
-						<tr>
-							<td background-color="#99CC33">Masalah makanan:</td>
-							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
-						</tr>
-						<tr>
-							<td>Masalah Khas :</td>
-							<td align="left"><select name="standard" id="select">
-									<option value="Standard 1">Diri-Takut</option>
-									<option value="Standard 2">Diri-Tidak Takut</option>
-									<option value="Standard 2">Kesihatan-Baik</option>
-									<option value="Standard 2">Kesihatan-Tidak</option>
-
-								</select></td>
-						</tr>
-						<tr>
-							<td>Kecacatan(Jika Ada) :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Pengalaman Khas :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/>
-								(Pernah tinggal di hospital/tidak)
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">Orang Yang Boleh Dihubungi Jika Berlaku Kecemasan :</td>
-						</tr>
-						<tr>
-							<td>Nama :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Alamat :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-
-						<tr>
-							<td>Telefon :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-
-						<tr>
-							<td colspan="2">Orang Yang Bertanggungjawab mengambil dan menghantar balik:</td>
-						</tr>
-						<tr>
-							<td>Nama :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Alamat :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-
-						<tr>
-							<td>Telefon :</td>
-							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
-						</tr>
-						<tr>
-							<td>Jenis dan No Kenderaan :</td>
-							<td><input name="parents" type="text" class="tab" id="parents"/></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="submit" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
-						</tr>
-					</table>
-				</form>
-
-			</div>
 		</div>
-		<p>&nbsp;</p><!-- end sidebar -->
+		<div class="b4 sidebar"></div><!-- end sidebar -->
 	</div><!-- end wrap -->
 
 </div><!-- end content -->
@@ -262,11 +271,7 @@
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 	</center>
 </div>
-<!--  end widget -->
-</div>
-
-</div><!-- end wrap -->
-c<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
+<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
 <center></center>
 </div><!-- end footer -->

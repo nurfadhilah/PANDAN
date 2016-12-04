@@ -70,38 +70,59 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>LOGO TADIKA</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Home</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
+
+					<ul>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
+
+					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Registration</a>
-
-				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Payment</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Registration fee</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Monthly fee</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Teacher">KEDATANGAN</a>
+					<ul>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Attendance</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -120,84 +141,106 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>PAYMENT</h1>
+			<h1>HALAMAN RUMAH</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
-		</div>
+			} ?></div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
 <div id="content">
 
-	<div id="content">
+<div class="wrap">
+		<div class="b8">
+			<h3>&nbsp;</h3>
 
-		<div class="wrap">
-			<div class="b8">
+			<div class="wrap">
+		<div class="b8">
+			<h3 class="title">PROFIL SAYA</h3>
 
-				<h3 class="title">LIST OF PAYMENT REGISTRATION<a href="report.php">(REPORT)</a></h3>
+			<p>&nbsp;</p>
 
+			<div class="page">
+				<table id="d03" width="1000px" border="1">
+					<tr>
+						<td><p>&nbsp;</p>
 
-				<div class="page">
+							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
+							      method="post" name="details">
+								<center>
+									<table id="d02" width="628" border="1" align="center">
+										<tr style="text-align:left">
+											<td width="247">NAMA KANAK-KANAK</td>
+											<td width="365"></td>
+										</tr>
+										<tr>
+											<td>TARIKH LAHIR</td>
+											<td><input name="std_name" type="text" id="textfield"
+											                       value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>UMUR</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>TEMPAT LAHIR</td>
+											<td><input name="std_ic" type="text" id="textfield4"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>NO SURAT BERANAK</td>
+											<td><input name="phone_num" type="text" id="textfield5"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>NO.MYKID</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+										</tr>
+		
+        <tr>
+											<td>BILANGAN ADIK BERADIK</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+									  </tr>	
+                                        <tr>
+											<td>ANAK KE</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+										</tr>							<tr>
+											<td>ALAMAT</td>
+											<td><p>
+											  <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
+                                          </p></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td align="right"><input type="submit" name="button2" id="button2"
+											                         value="Edit">
+												<input name="std_id" type="hidden" id="textfield3"
+												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
+										</tr>
+									</table>
+								</center>
+							</form>
+				</table>
+			</div><!--  end page -->
 
-					<form id="Order" name="Order" onSubmit="return Validate()" method="post"
-					      enctype="multipart/form-data">
-						<center>
-							<h3>TAHUN
-								:
-								<select name="OrderBy" onChange="javascript: submit()">
-									<option value="">Select Categories</option>
-									<option value="Standard 1">Standard1</option>
-									<option value="Standard 2">Standard2</option>
-									<option value="Standard 3">Standard3</option>
-									<option value="Standard 4">Standard4</option>
-									<option value="Standard 5">Standard5</option>
-									<option value="Standard 6">Standard6</option>
-								</select>
-							</h3>
-						</center>
-					</form>
-					<br/>
-					<center></center>
-					<center></center>
-					<p>&nbsp;</p>
-					<center></center>
-					<p></p>
-					<center></center>
-					<p></p>
-					<center></center>
-					<p></p>
-					<center></center>
-					<p></p>
-
-					<p>&nbsp;</p>
-
-					<p>&nbsp;</p>
-
-					<p>&nbsp;</p>
-				</div><!--  end entry -->
-
-			</div>
-			<p>&nbsp;</p><!-- end sidebar -->
-		</div><!-- end wrap -->
-
+		</div>
+		<div class="b4 sidebar"></div><!-- end sidebar -->
+	</div>
+		</div>
+		<p>&nbsp;</p><!-- end sidebar -->
 	</div><!-- end wrap -->
 
 </div><!-- end content -->
@@ -211,7 +254,7 @@
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 	</center>
 </div>
-<!--  end widget --><img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
+<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
 <center></center>
 </div><!-- end footer -->

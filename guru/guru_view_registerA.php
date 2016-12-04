@@ -3,7 +3,7 @@ include_once "../DB.php";
 include_once "../vendor/phpqrcode/qrlib.php";
 
 $qrcode_img = '';
-$_GET['id'] = 1;
+
 if(isset($_POST['submit'])){
 	$id = $_GET['id'];
 
@@ -15,11 +15,9 @@ if(isset($_POST['submit'])){
 
 	header("Location: guru_view_qrcode.php?id=$toddler->id");
 }
-
-if (isset($_GET['id'])) {
-	$id = $_GET['id'];
+else
 	$toddlers = (new DB('toddlers'))->findAll("status_id=1");
-}
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -99,45 +97,53 @@ if (isset($_GET['id'])) {
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">pendaftara</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
 
 					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Attendance</a>
+				<li><a title="Teacher">KEDATANGAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
 
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -162,21 +168,10 @@ if (isset($_GET['id'])) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
@@ -184,9 +179,10 @@ if (isset($_GET['id'])) {
 <div class="wrap">
 	<div class="c-12">
 		<h3 class="title">SENARAI MENUNGGU PENGESAHAN PENDAFTARAN</h3>
+		<p>&nbsp;</p>
 		<center>
 
-			<table>
+		  <table>
 				<thead>
 				<tr>
 					<th>Bil</th>
@@ -201,7 +197,7 @@ if (isset($_GET['id'])) {
 				<?php foreach ($toddlers as $i => $toddler): ?>
 					<tr>
 						<td><?= $i + 1 ?></td>
-						<td><?= $toddler->name ?></td>
+						<td><a href="guru_view_registerB.php?id=<?php echo $name; ?>"><?= $toddler->name ?></td>
 						<td><?= $toddler->mykid ?></td>
 						<td><?= ($toddler->standard == 1) ? 5 : 6 ?></td>
 						<td><?= (new DB('users'))->findOne($toddler->parent_id)->username ?></td>
@@ -214,7 +210,6 @@ if (isset($_GET['id'])) {
 					</tr>
 				<?php endforeach ?>
 				</tbody>
->>>>>>> 2d5688880e1ee950af92039996455843214a3abc
 			</table>
 		</center>
 	</div>

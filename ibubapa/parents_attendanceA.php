@@ -70,38 +70,38 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>&nbsp;</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Home</a>
+				<li><a href="parents_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Registration</a>
+					<a href="parents_registrationA.php" title="Schedule">PENDAFTARAN</a>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Payment</a>
+				<li><a title="Teacher">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Registration fee</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Monthly fee</a></li>
+						<li><a href="parent_bayaranpendaftaran.php" title="Add Teacher">PENDAFTARAN</a></li>
+						<li><a href="parents_bayaranbulanan.php" title="List of Teacher">YURAN BULANAN</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Attendance</a>
+					<a href="parents_attendanceA.php" title="Schedule">KEDATANGAN</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="parents_home.php" title="Mid Term">PROFIL</a></li>
+						<li><a href="parents_changepassword.php" title="Final Exam">TUKAR PASSWORD</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -120,27 +120,16 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>ATTENDANCE</h1>
+			<h1>KEDATANGAN</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
@@ -152,7 +141,7 @@
 		<div class="wrap">
 			<div class="b8">
 
-				<h3 class="title">LIST OF ATTENDANCE<a href="report.php"> (REPORT)</a></h3>
+				<h3 class="title">SENARAI KEDATANGAN<a href="report.php"> (REPORT)</a></h3>
 
 
 				<div class="page">
@@ -160,17 +149,12 @@
 					<form id="Order" name="Order" onSubmit="return Validate()" method="post"
 					      enctype="multipart/form-data">
 						<center>
-							<h3>SEARCH
-								: TAHUN
-								<select name="OrderBy" onChange="javascript: submit()">
-									<option value="">Select Categories</option>
-									<option value="Standard 1">Standard1</option>
-									<option value="Standard 2">Standard2</option>
-									<option value="Standard 3">Standard3</option>
-									<option value="Standard 4">Standard4</option>
-									<option value="Standard 5">Standard5</option>
-									<option value="Standard 6">Standard6</option>
-								</select></h3>
+							<h3> TAHUN
+<select name="OrderBy" onChange="javascript: submit()">
+<option value="">PILIH TAHUN</option>
+									<option value="Standard 1">2016</option>
+									<option value="Standard 2">2017</option>
+														</select></h3>
 						</center>
 					</form>
 					<br/>
@@ -180,26 +164,19 @@
 								<th width="138">Bulan</th>
 								<th width="272">Action</th>
 							</tr>
-							<?php $count = $start_from;
-							while ($row = mysql_fetch_assoc($rs_result)) {
-								$count++;;
-								$std_id = $row['std_id'];
-								$std_name = $row['std_name'];
-
-
-								?>
+							
 
 								<tr>
 									<td align="center" style="color:#000">&nbsp;</td>
 									<td bgcolor="#CC0033"><a
-											href="admin_drop_student.php?id=<?php echo $std_id; ?>"><input
-												type="reset" name="input2" class="reset" value="VIEW DETAILS"/>
+											href="parents_attendanceB.php"><input
+												type="reset" name="input2" class="reset" value="LIHAT MAKLUMAT"/>
 										</a></td>
 
 
 								</tr>
 
-							<?php } ?>
+							
 						</table>
 					</center>
 					<center></center>

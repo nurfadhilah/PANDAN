@@ -69,35 +69,59 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>LOGO TADIKA</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HOME</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
+
+					<ul>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
+
+					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-
-				<li><a title="Teacher">GURU</a>
+				<li>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Teacher">KEDATANGAN</a>
+					<ul>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">OTHERS</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftra Keluar</a></li>
+
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -122,21 +146,10 @@
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->

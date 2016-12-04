@@ -70,38 +70,38 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>&nbsp;</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Home</a>
+				<li><a href="parents_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Registration</a>
+					<a href="parents_registrationA.php" title="Schedule">PENDAFTARAN</a>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Payment</a>
+				<li><a title="Teacher">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Registration fee</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Monthly fee</a></li>
+						<li><a href="parent_bayaranpendaftaran.php" title="Add Teacher">PENDAFTARAN</a></li>
+						<li><a href="parents_bayaranbulanan.php" title="List of Teacher">YURAN BULANAN</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Attendance</a>
+					<a href="parents_attendanceA.php" title="Schedule">KEDATANGAN</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="parents_home.php" title="Mid Term">PROFIL</a></li>
+						<li><a href="parents_changepassword.php" title="Final Exam">TUKAR PASSWORD</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -120,79 +120,104 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>HOME</h1>
+			<h1>HALAMAN RUMAH</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
-		</div>
+			} ?></div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
 <div id="content">
 
-	<div class="wrap">
-		<p class="message success">Permohonan Anda Telah Berjaya di Hantar. Sila Tunggu status permohonan anda </p>
-	</div><!-- end wrap -->
-
-</div>
-
-<div id="content">
-
-	<div class="wrap">
+<div class="wrap">
 		<div class="b8">
 			<h3>&nbsp;</h3>
 
+			<div class="wrap">
+		<div class="b8">
+			<h3 class="title">PROFIL SAYA</h3>
+
+			<p>&nbsp;</p>
+
 			<div class="page">
+				<table id="d03" width="1000px" border="1">
+					<tr>
+						<td><p>&nbsp;</p>
 
-				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
-				      id="add">
-					<table id="d01" width="794" border="1">
-						<tr>
-							<td width="324"><img class="alignleft" src="assets/post-image-large.jpg" width="281"
-							                     height="229" alt="" title=""/></td>
-							<td width="454"><p>
-									ID NO :
-									<input name="name" type="text" class="tab" id="name"/>
-								</p>
+							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
+							      method="post" name="details">
+								<center>
+									<table id="d02" width="628" border="1" align="center">
+										<tr style="text-align:left">
+											<td width="247">NAMA KANAK-KANAK</td>
+											<td width="365"></td>
+										</tr>
+										<tr>
+											<td>TARIKH LAHIR</td>
+											<td><input name="std_name" type="text" id="textfield"
+											                       value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>UMUR</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>TEMPAT LAHIR</td>
+											<td><input name="std_ic" type="text" id="textfield4"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>NO SURAT BERANAK</td>
+											<td><input name="phone_num" type="text" id="textfield5"
+											           value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>NO.MYKID</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+										</tr>
+		
+        <tr>
+											<td>BILANGAN ADIK BERADIK</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+									  </tr>	
+                                        <tr>
+											<td>ANAK KE</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+										</tr>							<tr>
+											<td>ALAMAT</td>
+											<td><p>
+											  <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
+                                          </p></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td align="right"><input type="submit" name="button2" id="button2"
+											                         value="Edit">
+												<input name="std_id" type="hidden" id="textfield3"
+												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
+										</tr>
+									</table>
+								</center>
+							</form>
+				</table>
+			</div><!--  end page -->
 
-								<p>
-									NAMA :
-									<input name="name2" type="text" class="tab" id="name2"/>
-								</p>
-
-								<p>UMUR :
-									<input name="name2" type="text" class="tab" id="name2"/>
-								</p>
-
-								<p>JANTINA :
-									<input name="name2" type="text" class="tab" id="name2"/>
-								</p>
-
-								<p>STATUS PENDAFTARAN :
-									<input name="name2" type="text" class="tab" id="name2"/><br>
-								</p></td>
-						</tr>
-					</table>
-				</form>
-
-			</div>
+		</div>
+		<div class="b4 sidebar"></div><!-- end sidebar -->
+	</div>
 		</div>
 		<p>&nbsp;</p><!-- end sidebar -->
 	</div><!-- end wrap -->

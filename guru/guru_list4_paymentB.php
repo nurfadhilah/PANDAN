@@ -69,35 +69,59 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>LOGO TADIKA</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HOME</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
+
+					<ul>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
+
+					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-
-				<li><a title="Teacher">GURU</a>
+				<li>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+
+					</ul>
+				</li>
+				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
+				<li><a title="Teacher">KEDATANGAN</a>
+					<ul>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">OTHERS</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftra Keluar</a></li>
+
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -122,8 +146,7 @@
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?></p>
 		</div>
 
 		<div class="c-4">
@@ -143,117 +166,80 @@
 
 </div>
 
-<div id="content">
-
-	<div class="wrap">
-		<div class="b8">
-			<h3 class="title">KEMASKINI BAYARAN</h3>
-
-			<p><span class="c-12">
-               <?php
-               include("dbase.php");
-               $query = "SELECT * FROM  std_info WHERE std_id = '" . $_SESSION['SESS_USERNAME'] . "'";
-
-               $result = mysql_query($query, $conn);
+<div class="wrap">
+	<div class="c-12">
 
 
-               $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
+		<h3 class="title">PAPARAN YURAN</h3>
+		<?php
+		include("dbase.php");
+		$idURL = $_GET['id'];
+		$query = "SELECT * FROM  std_info WHERE std_id='$idURL'";
 
-               $std_id = $row['std_id'];
-               $std_name = $row['std_name'];
-               $standard = $row['standard'];
-               $std_ic = $row['std_ic'];
-               $phone_num = $row['phone_num'];
-               $address = $row['address'];
-               $parents = $row['parent_name'];
-               $pnum = $row['parent_phone'];
-               $emel = $row['email'];
-               $sickness = $row['sickness'];
+		$result = mysql_query($query, $conn);
 
-               @mysql_free_result($result);
-               ?>
-             </span></p>
 
-			<div class="page">
-				<table id="d03" width="1000px" border="1">
-					<tr>
-						<td><p>&nbsp;</p>
+		$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
 
-							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
-							      method="post" name="details">
-								<center>
-									<table id="d02" width="628" border="1" align="center">
-										<tr style="text-align:left">
-											<td width="247">Name</td>
-											<td width="365"><input name="std_name" type="text" id="textfield"
-											                       value="<?php echo $std_name; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Student ID</td>
-											<td><?php echo $_SESSION['SESS_USERNAME']; ?></td>
-										</tr>
-										<tr>
-											<td>Standard</td>
-											<td><select name="standard">
-													<option disabled=disabled value="">Current Standard</option>
-													<option
-														value="<?php echo $standard ?>"><?php echo $standard ?></option>
-													<option disabled=disabled value="">Change to</option>
-													<option value="Standard 1">Standard1</option>
-													<option value="Standard 2">Standard2</option>
-													<option value="Standard 3">Standard3</option>
-													<option value="Standard 4">Standard4</option>
-													<option value="Standard 5">Standard5</option>
-													<option value="Standard 6">Standard6</option>
-												</select></td>
-										</tr>
-										<tr>
-											<td>Student IC</td>
-											<td><input name="std_ic" type="text" id="textfield4"
-											           value="<?php echo $std_ic; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Phone Number</td>
-											<td><input name="phone_num" type="text" id="textfield5"
-											           value="<?php echo $phone_num; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Address</td>
-											<td><input name="address" type="text" id="textfield6"
-											           value="<?php echo $address; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Parent's Name</td>
-											<td><input name="parents" type="text" id="textfield7"
-											           value="<?php echo $parents; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Parent's Phone Number</td>
-											<td><input name="pnum" type="text" id="textfield8"
-											           value="<?php echo $pnum; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td>Email</td>
-											<td><input name="emel" type="text" id="textfield9"
-											           value="<?php echo $emel; ?>" size="50"></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td align="right"><input type="submit" name="button2" id="button2"
-											                         value="Simpan">
-												<input name="std_id" type="hidden" id="textfield3"
-												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
-										</tr>
-									</table>
-								</center>
-							</form>
-				</table>
-			</div><!--  end page -->
+		$std_id = $row['std_id'];
+		$std_name = $row['std_name'];
+		$standard = $row['standard'];
+		$std_ic = $row['std_ic'];
+		$phone_num = $row['phone_num'];
+		$address = $row['address'];
+		$parents = $row['parent_name'];
+		$pnum = $row['parent_phone'];
+		$emel = $row['email'];
+		$sickness = $row['sickness'];
 
-		</div>
-		<div class="b4 sidebar"></div><!-- end sidebar -->
-	</div><!-- end wrap -->
+		@mysql_free_result($result);
+		?>
+		<center>
+			<table id="d03" width="1000px" border="1">
+				<tr>
+					<td><p>&nbsp;</p>
 
+						<form action="admin_edit_std.php?id=<?php echo $std_id; ?>" method="post" name="details">
+							<center>
+								<table id="contact" width="527" border="1" align="center">
+									<tr style="text-align:left">
+										<td width="183">NAMA</td>
+										<td width="328">&nbsp;</td>
+									</tr>
+									<tr>
+										<td>MYKIDS</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>KELAS</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>UMUR</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>BAYARAN</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>STATUS</td>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Action</td>
+										<td>
+											<a href="guru_list5_paymentB.php?id=<?php echo $id; ?>"><input type="submit" name="submit" id="button" value="KEMASKINI"></td>
+									</tr>
+								</table>
+							</center>
+						</form>
+			</table>
+
+
+		</center>
+		</ul>
+	</div>
 </div><!-- end content -->
 
 <div id="footer">

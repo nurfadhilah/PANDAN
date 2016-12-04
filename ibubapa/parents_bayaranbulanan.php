@@ -1,8 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -69,51 +70,38 @@
 	</ul>
 	<div class="wrap">
 
-		<h1>LOGO TADIKA</h1>
+		<h1>&nbsp;</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">pendaftara</a>
-
-					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
-
-					</ul>
+				<li><a href="parents_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
-					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+					<a href="parents_registrationA.php" title="Schedule">PENDAFTARAN</a>
 
-					</ul>
-				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Attendance</a>
+				<li><a title="Teacher">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="parent_bayaranpendaftaran.php" title="Add Teacher">PENDAFTARAN</a></li>
+						<li><a href="parents_bayaranbulanan.php" title="List of Teacher">YURAN BULANAN</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
+					<a href="parents_attendanceA.php" title="Schedule">KEDATANGAN</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="parents_home.php" title="Mid Term">PROFIL</a></li>
+						<li><a href="parents_changepassword.php" title="Final Exam">TUKAR PASSWORD</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -132,82 +120,97 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>MAKLUMAT KANAK-KANAK</h1>
+			<h1>BAYARAN YURAN</h1>
 
-			<p class="breadcrumbs">You are here: <a href="home">Home</a> &raquo; <a href="home">Sample
-					Page</a> &raquo; <strong>About Full</strong></p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div class="wrap">
-	<div class="c-12">
+<div id="content">
+
+	<div id="content">
+
+		<div class="wrap">
+			<div class="b8">
+
+				<h3 class="title">BAYARAN BULANAN <a href="report.php">(REPORT)</a></h3>
 
 
-		<h3 class="title">PAPARAN</h3>
-		<center>
-		  <table id="d03" width="1000px" border="1">
-				<tr>
-					<td><p>&nbsp;</p>
+				<div class="page">
 
-						<form action="admin_edit_teacher.php?id=<?php echo $lec_id; ?>" method="post" name="details">
-							<center>
-								<table id="contact" width="527" border="1" align="center">
-									<tr style="text-align:left">
-										<td width="130">Lecturer ID</td>
-										<td width="328">&nbsp;</td>
-									</tr>
-									<tr>
-										<td background-color="#99CC33">Name</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>IC Number :</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Subject</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Phone Number :</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Address :</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Email Address :</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td>
-											<input type="submit" name="button" id="button" value="NEXT"></td>
-									</tr>
-								</table>
-							</center>
-						</form>
-			</table>
+					<form id="Order" name="Order" onSubmit="return Validate()" method="post"
+					      enctype="multipart/form-data">
+						<center>
+							<h3>TAHUN
+								:
+								<select name="OrderBy" onChange="javascript: submit()">
+									<option value="">PILIH TAHUN</option>
+									<option value="">2016</option>
+									<option value="">2017</option>
+									
+							  </select>
+							</h3>
+						</center>
+					</form>
+				  <p>&nbsp;</p>
+					<p><br/>
+				  </p>
+					<center>
+<table id="d02" width="789" border="1">
+											<tr>
+												<th width="138">NO.</th>
+												<th width="138">BULAN</th>
+												<th width="357">RM</th>
+												<th width="357">STATUS</th>
 
+											</tr>
 
-		</center>
-		</ul>
-	</div>
+									
+
+<tr>
+												<td align="center" style="color:#000">&nbsp;</td>
+
+												<td background-color="#99CC33">&nbsp;</td>
+
+												<td bgcolor="#CC0033">&nbsp;</td>
+												<td bgcolor="#CC0033"><a href="admin_edit_kuota.php?id=<?php echo $id; ?>"></td>
+
+															
+</tr>
+													</table>
+			    </center>
+					<center></center>
+					<p>&nbsp;</p>
+					<center></center>
+					<p></p>
+					<center></center>
+					<p></p>
+					<center></center>
+					<p></p>
+					<center></center>
+					<p></p>
+
+					<p>&nbsp;</p>
+
+					<p>&nbsp;</p>
+
+					<p>&nbsp;</p>
+				</div><!--  end entry -->
+
+			</div>
+			<p>&nbsp;</p><!-- end sidebar -->
+		</div><!-- end wrap -->
+
+	</div><!-- end wrap -->
+
 </div><!-- end content -->
 
 <div id="footer">
@@ -219,7 +222,7 @@
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 	</center>
 </div>
-<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
+<!--  end widget --><img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
 <center></center>
 </div><!-- end footer -->

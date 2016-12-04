@@ -1,8 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Kid`s Voice School About Full</title>
+	<title>Tadika Kemas Pandan 1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="A small sentence describing your website's subject"/>
 	<meta name="keywords" content="some, keywords, separated, by, comas"/>
@@ -75,51 +76,53 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">PENDAFTARAN</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
 
 					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">PEMBAYARAN</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li><a title="Teacher">KEDATANGAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">PENGUMUMAN</a>
-					<ul>
-
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Tambah Pengumuman</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Kemaskini Pengumuman</a></li>
-
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
 
 					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li><a title="Result">LAIN</a>
 					<ul>
 
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Kemaskini Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftar Keluar</a></li>
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -140,18 +143,14 @@
 		<div class="c-8">
 			<h1>DOKUMEN</h1>
 
-			<p class="breadcrumbs">Anda Disini :<strong>DOKUMEN</strong></p>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li>
-						<h3 class="widget-title">nama</h3></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div>
@@ -180,7 +179,7 @@
 							<option value="Standard 5">Standard 5</option>
 							<option value="Standard 6">Standard 6</option>
 						</select>
-						<input type="submit" name="button2" id="button2" value="Hantar"/>
+						<a href="guru_home.php?id=<?php echo $id; ?>"><input type="submit" name="submit" id="button" value="SIMPAN" />
 					</p>
 				</form>
 			</td>
@@ -289,7 +288,7 @@
 		</tr>
 
 		<tr>
-			<td>STANDARD 4 <a href="print4.php">(Print)</a></td>
+			<td>STANDARD 7 <a href="print7.php">(Print)</a></td>
 
 
 		</tr>

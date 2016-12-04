@@ -1,4 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php //include("../admin/dbase.php") ?>
+<?php
+	include_once "../DB.php";
+	
+	if(isset($_POST['submit'])){
+		$toddlerModel = new DB('toddlers');
+		$_POST['toddlers']['parent_id']  = $_SESSION['user']['id'];
+		$_POST['toddlers']['status_id']  = 1;
+		if($toddlerModel->insert($_POST['toddlers']))
+			//header("Location: index.php?id={$toddlerModel->getLastInsertId()}");
+			header("Location: parents_registrationB.php?id={$toddlerModel->getLastInsertId()}");
+		else
+			d("Ralat!");
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -75,45 +91,53 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">pendaftara</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
 
 					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Attendance</a>
+				<li><a title="Teacher">KEDATANGAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
 
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -132,124 +156,91 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>MAKLUMAT KANAK-KANAK</h1>
+			<h1>maklumat pendaftaran</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div class="wrap">
-	<div class="c-12">
+<div id="content">
 
+	<div class="wrap">
+		<div class="b8">
+			<h3>A.MAKLUMAT KANAK-KANAK</h3>
 
-		<h3 class="title">TEACHER'S DETAIL</h3>
-		<?php
-		include("dbase.php");
-		$idURL = $_GET['id'];
-		$query = "SELECT * FROM  lecturer WHERE lecturer_id='$idURL'";
+			<div class="page">
 
-		$result = mysql_query($query, $conn);
+				<form action="parents_registrationA.php" method="post" enctype="multipart/form-data" name="add"
+				      id="add">
+					<table id="d01" width="636" border="1">
+						<tr>
+							<td width="130">Nama Kanak-Kanak:</td>
+							<td width="428">
 
+								<input name="toddlers[name]" type="text" class="tab" id="name"/>
 
-		$row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
+							</td>
+						</tr>
+						<tr>
+							<td background-color="#99CC33">Tarikh Lahir :</td>
+							<td bgcolor="#CC0033"><input name="toddlers[dob]" type="text" class="tab" id="dob"/></td>
+						</tr>
+						<tr>
+							<td>Umur :</td>
+							<td align="left"><select name="toddlers[standard]" id="select">
+									<option value="1">5 Tahun</option>
+									<option value="2">6 Tahun</option>
 
-		$lec_id = $row['lecturer_id'];
-		$lec_name = $row['lecturer_name'];
-		$subject = $row['subject'];
-		$icnum = $row['lec_ic_num'];
-		$lec_phone_num = $row['lec_phone_num'];
-		$address = $row['address'];
-		$emel = $row['email'];
+								</select></td>
+						</tr>
+						<tr>
+							<td>Temapt Lahir :</td>
+							<td><input name="toddlers[birth_place]" type="text" class="tab" id="brith_place"/></td>
+						</tr>
+						<tr>
+							<td>No.Surat Beranak :</td>
+							<td><input name="toddlers[birth_no]" type="text" class="tab" id="brith_no"/></td>
+						</tr>
+						<tr>
+							<td>NO.Mykid :</td>
+							<td><input name="toddlers[mykid]" type="text" class="tab" id="mykid"/></td>
+						</tr>
+						<tr>
+							<td>Bilangan Adik-Beradik :</td>
+							<td><input name="toddlers[sibling_count]" type="text" class="tab" id="sibling_count"/></td>
+						</tr>
+						<tr>
+							<td>Anak ke :</td>
+							<td><input name="toddlers[sibling_index]" type="text" class="tab" id="sibling_index"/></td>
+						</tr>
+						<tr>
+							<td>Alamat Surat Menyurat :</td>
+							<td>
+								<textarea name="toddlers[address]" id="address" cols="50" rows="5"></textarea></td>
+						</tr>
+						<tr>
+                        
+                        
+							<td>&nbsp;</td>
+							<td style="text-align:right"><input type="reset" name="reset" id="button" value="SEMULA"/>
+								<input type="submit" name="submit" id="button" value="SIMPAN" /></td>
+						</tr>
+					</table>
+				</form>
 
-		if ($subject == "BM1") {
-			$sub_name = 'Bahasa Melayu (Pemahaman)';
+			</div>
+		</div>
+		<p>&nbsp;</p><!-- end sidebar -->
+	</div><!-- end wrap -->
 
-		} else if ($subject == "BM2") {
-			$sub_name = 'Bahasa Melayu (Penulisan)';
-
-		} else if ($subject == "SN") {
-			$sub_name = 'Science';
-
-		} else if ($subject == "MM") {
-			$sub_name = 'Mathematic';
-
-		} else if ($subject == "BI") {
-			$sub_name = 'English';
-
-		}
-
-
-		@mysql_free_result($result);
-		?>
-		<center>
-			<table id="d03" width="1000px" border="1">
-				<tr>
-					<td><p>&nbsp;</p>
-
-						<form action="admin_edit_teacher.php?id=<?php echo $lec_id; ?>" method="post" name="details">
-							<center>
-								<table id="contact" width="527" border="1" align="center">
-									<tr style="text-align:left">
-										<td width="130">Lecturer ID</td>
-										<td width="328"><?php echo $lec_name; ?></td>
-									</tr>
-									<tr>
-										<td background-color="#99CC33">Name</td>
-										<td><?php echo $lec_id; ?></td>
-									</tr>
-									<tr>
-										<td>IC Number :</td>
-										<td><?php echo $icnum; ?></td>
-									</tr>
-									<tr>
-										<td>Subject</td>
-										<td><?php echo $sub_name; ?></td>
-									</tr>
-									<tr>
-										<td>Phone Number :</td>
-										<td><?php echo $lec_phone_num; ?></td>
-									</tr>
-									<tr>
-										<td>Address :</td>
-										<td><?php echo $address; ?></td>
-									</tr>
-									<tr>
-										<td>Email Address :</td>
-										<td><?php echo $emel; ?></td>
-									</tr>
-									<tr>
-										<td></td>
-										<td>
-											<input type="submit" name="submit" id="button" value="NEXT"></td>
-									</tr>
-								</table>
-							</center>
-						</form>
-			</table>
-
-
-		</center>
-		</ul>
-	</div>
 </div><!-- end content -->
 
 <div id="footer">

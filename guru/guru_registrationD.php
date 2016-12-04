@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -69,51 +70,59 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>LOGO TADIKA</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Registration</a>
+				<li><a href="" title="Subject">PENDAFTARAN</a>
 
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pendaftaran Anak</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Pendaftar</a></li>
+						<li><a href="guru_registrationA.php" title="Add Teacher">PENDAFTARAN ANAK</a></li>
+						<li><a href="guru_view_registerA.php" title="List of Teacher">SENARAI PENDAFTARAN</a></li>
 
 					</ul>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Payment</a>
+					<a href="" title="Schedule">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Bayaran Bulanan</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
+						<li><a href="guru_list1_paymentA.php" title="Add Teacher">Bayaran Bulanan</a></li>
+						<li><a href="guru_list1_paymentB.php" title="List of Teacher">Bayaran Pendaftaran</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Attendance</a>
+				<li><a title="Teacher">KEDATANGAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Pengimbas Qr </a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Kedatangan</a></li>
+						<li><a href="guru_view_attendance.php" title="Add Teacher">SENARAI KEDATANGAN </a></li>
+						
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Anoucment</a>
+					<a href="" title="Schedule">PENGUMUMAN</a>
+                    
+                    <ul>
+						<li><a href="guru_add_annoucment.php" title="Add Teacher">TAMBAH PENGUMUMAN </a></li>
+                        <li><a href="guru_list_annoucment.php" title="Add Teacher">SENARAI PENGUMUMAN </a></li>
+						
+
+					</ul>
+				</li>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
 
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Edit Registration</a></li>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="guru_home.php" title="Mid Term">PROFIL</a></li>
+						
+						<li><a href="guru_changepassword.php" title="Final Exam">TUKAR KATALALUAN</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -132,27 +141,16 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>PERAKUAN</h1>
+			<h1>MAKLUMAT AM </h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
@@ -161,44 +159,96 @@
 
 	<div class="wrap">
 		<div class="b8">
-			<h3>E. PERAKUAN IBU BAPA</h3>
+			<h3>D.MAKLUMAT AM KANAK-KANAK</h3>
 
 			<div class="page">
 
 				<form action="admin_add_student_process.php" method="post" enctype="multipart/form-data" name="add"
 				      id="add">
-					<table id="d01" width="924" border="1">
+					<table id="d01" width="636" border="1">
 						<tr>
-							<td><input type="checkbox" name="vehicle" value="Bike">
-								Sekiranya anak saya diterima, saya menjamin dia akan hadir ke Tabika pada hari-hari yang
-								telah ditetapkan melainkan jika dia sakit atau cuti. Sekiranya dia tidak dapat hadir
-								lebih daripada seminggu berturut-turut, saya bersetuju dia akan diberhentikan, untuk
-								memberi tempat kepada kanak-kanak lain
-								<br></td>
+							<td width="130">Jenis Permainan Digemari :</td>
+							<td width="428">
+
+								<input name="name" type="text" class="tab" id="name"/>
+
+							</td>
+						</tr>
+						<tr>
+							<td background-color="#99CC33">Kerja-Kerja Rumah Digemari:</td>
+							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
 						</tr>
 
 						<tr>
-							<td><input type="checkbox" name="vehicle" value="Bike">
-								Saya membenarkan anak saya menerima rawatan perkhidmatan kesihatan/ disuntik/ tanam
-								cacar (jika belum) dan lain-lain rawatan oleh Doktor/ Jururawat<br></td>
+							<td background-color="#99CC33">Makanan Yang Disukai:</td>
+							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
 						</tr>
 
 						<tr>
-							<td><input type="checkbox" name="vehicle" value="Bike">
-								Saya membenarkan anak saya dibawa melawat oleh guru bersama-sama dengan kanak-kanak lain
-								di waktu belajar.
-								<br></td>
+							<td background-color="#99CC33">Masalah makanan:</td>
+							<td bgcolor="#CC0033"><input name="idnum" type="text" class="tab" id="idnum"/></td>
+						</tr>
+						<tr>
+							<td>Masalah Khas :</td>
+							<td align="left"><select name="standard" id="select">
+									<option value="Standard 1">Diri-Takut</option>
+									<option value="Standard 2">Diri-Tidak Takut</option>
+									<option value="Standard 2">Kesihatan-Baik</option>
+									<option value="Standard 2">Kesihatan-Tidak</option>
+
+								</select></td>
+						</tr>
+						<tr>
+							<td>Kecacatan(Jika Ada) :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+						<tr>
+							<td>Pengalaman Khas :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/>
+								(Pernah tinggal di hospital/tidak)
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">Orang Yang Boleh Dihubungi Jika Berlaku Kecemasan :</td>
+						</tr>
+						<tr>
+							<td>Nama :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+						<tr>
+							<td>Alamat :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
 						</tr>
 
 						<tr>
-							<td><input type="checkbox" name="vehicle" value="Bike">
-								Jika berlaku sesuatu kemalangan diluar masa dan kawasan Tabika adalah tanggungjawab ibu
-								/ bapa/ penjaga<br></td>
+							<td>Telefon :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+
+						<tr>
+							<td colspan="2">Orang Yang Bertanggungjawab mengambil dan menghantar balik:</td>
 						</tr>
 						<tr>
-							<td><input type="reset" name="reset" id="button" value="Reset"/>
-								<input type="submit" name="submit" id="button" value="Submit"
-								       onClick="return Validate()"/></td>
+							<td>Nama :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+						<tr>
+							<td>Alamat :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+
+						<tr>
+							<td>Telefon :</td>
+							<td><input name="icnum" type="text" class="tab" id="icnum"/></td>
+						</tr>
+						<tr>
+							<td>Jenis dan No Kenderaan :</td>
+							<td><input name="parents" type="text" class="tab" id="parents"/></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td style="text-align:right"><input type="reset" name="reset" id="button" value="Reset"/>
+								<a href="guru_registrationF.php?id=<?php echo $id; ?>"><input type="submit" name="submit" id="button" value="SIMPAN" /></td>
 						</tr>
 					</table>
 				</form>
@@ -219,7 +269,11 @@
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p>
 	</center>
 </div>
-<!--  end widget --><img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
+<!--  end widget -->
+</div>
+
+</div><!-- end wrap -->
+c<img src="../../AGL_all/img/acdrule.gif" width="1358" height="8">
 
 <center></center>
 </div><!-- end footer -->

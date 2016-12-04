@@ -1,6 +1,4 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -96,8 +94,10 @@
 	<div id="intro">
 		<div class="wrap">
 
-		  <div class="c-8">
-			<h1>HALAMAN UTAMA</h1>
+			<div class="c-8">
+		    <h1>tentang kami </h1>
+
+				<p class="breadcrumbs">&nbsp;</p>
 			</div>
 
 			<div class="c-4"></div>
@@ -124,6 +124,7 @@
 
 			<div class="c-8">
 				<div id="big-slider">
+					<div class="slider-mask"></div>
 					<ul id="slider-items">
 						<li>
 							<img src="assets/slider_asset__0000_.jpg" width="650" height="293" alt="Slider Image"
@@ -157,38 +158,7 @@
 			</div>
 
 			<div class="c-4">
-				<div id="cat-slider">
-					<h2>PENGUMUMAN</h2>
-					<span class="devider"></span>
-
-					<div id="scroller">
-						<ul>
-							<li>
-							  <h3><a href="#" title="Infant">1</a>							</h3>
-							</li>
-					    <li>
-					      <h3><a href="#" title="Infant">2</a></h3>
-					      SUKANEKA</li>
-							<li>
-							  <h3><a href="#" title="Infant">3</a></h3>
-							  GOTONG ROYONG</li>
-						</ul>
-						<ul>
-							<li><h3><a href="#" title="Infant">Infant 1</a></h3>Lorem ipsum dolor sit amet sit amet</li>
-							<li><h3><a href="#" title="Infant">Pre-toddlers 1</a></h3>Lorem ipsum dolor sit amet</li>
-							<li><h3><a href="#" title="Infant">Toddlers 1</a></h3>Lorem ipsum dolor sit amet</li>
-						</ul>
-						<ul>
-							<li><h3><a href="#" title="Infant">Infant 2</a></h3>Lorem ipsum dolor sit amet sit amet</li>
-							<li><h3><a href="#" title="Infant">Pre-toddlers 2</a></h3>Lorem ipsum dolor sit amet</li>
-							<li><h3><a href="#" title="Infant">Toddlers 2</a></h3>Lorem ipsum dolor sit amet</li>
-						</ul>
-					</div><!-- END scroller -->
-
-					<span class="up-arrow" title="Next"></span>
-					<span class="down-arrow" title="Previous"></span>
-
-				</div> <!-- end cat-slider -->
+				<!-- end cat-slider -->
 			</div>
 
 		</div><!-- end wrap --><!-- END slider-bg // ljulja, togodan, vepak // pronunced by my son Luka :) -->
@@ -202,9 +172,9 @@
 				<div class="wrap">
 					<div class="b8">
 						<div class="page">
-							<h2>TENTANG TADIKA KEMAS</h2>
-
-							<p>Tadika Kemas Pandan 1 adalah tadika di bawah seliaan KEMAS.</p></div><!-- end page-->
+							<h2>TENTANG KAMI</h2>
+							<p>HURAIAN</p>
+						</div><!-- end page-->
 					</div><!-- end b8-->
 
 					<!-- end b4-->
@@ -218,8 +188,8 @@
 		<div class="wrap">
 
 			<div class="c-4">
-				<h3>JADUAL KAMI</h3>
-				<h4>Huraian</h4>
+				<h3>GURU KAMI</h3>
+				<h4>CIKGU A</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0000_.jpg" rel="example_group">
@@ -227,12 +197,12 @@
 						<img src="assets/slider_asset__0000_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>huraian</p>
+				<p>Huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>JADUAL MAKANAN</h3>
-				<h4>huraian</h4>
+				<h3>&nbsp;</h3>
+				<h4>CIKGU B</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0001_.jpg" rel="example_group">
@@ -240,12 +210,12 @@
 						<img src="assets/slider_asset__0001_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>huraian</p>
+				<p>Huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>JADUAL AKTIVITI</h3>
-				<h4>huraian</h4>
+				<h3>&nbsp;</h3>
+				<h4>CIKGU C</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0002_.jpg" rel="example_group">
@@ -253,11 +223,9 @@
 						<img src="assets/slider_asset__0002_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
+				<p>LHuraian
 
-		</div><!-- end wrap -->
+		</p></div></div><!-- end wrap -->
 	</div> <!-- end container-middle -->
 
 </div><!-- end content -->

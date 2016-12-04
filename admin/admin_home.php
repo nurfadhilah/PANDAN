@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php include("../admin/dbase.php") ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -15,7 +16,6 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/select_color.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="js/fancybox/jquery.fancybox-1.3.4.css"/>
-	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
 
 	<!-- Skin CSS -->
 	<link rel="stylesheet" type="text/css" media="screen" href="styles/Yellow-Orange/yellow-orange.css"
@@ -76,29 +76,29 @@
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">HALAMAN UTAMA</a>
+				<li><a href="admin_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
 				<li><a title="Teacher">GURU</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Tambah Guru</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Senarai Guru</a></li>
+						<li><a href="admin_add_guru.php" title="Add Teacher">Tambah Guru</a></li>
+						<li><a href="admin_list_guru.php" title="List of Teacher">Senarai Guru</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">KUOTA</a>
+					<a href="admin_view_kuota.php" title="Schedule">KUOTA</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">Profil</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Tukar Katalaluan</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Daftar Keluar</a></li>
+						<li><a href="admin_home.php" title="Mid Term">Profil</a></li>
+						<li><a href="admin_change_password.php" title="Final Exam">Tukar Katalaluan</a></li>
+						<li><a href="index.php" title="Full Result">Daftra Keluar</a></li>
 
 					</ul>
 
@@ -117,104 +117,94 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>Halaman utama</h1>
+			<h1>HALAMAN RUMAH</h1>
 
-			<p class="breadcrumbs">Anda Disini :<strong> HALAMAN UTAMA</strong></p>
-		</div>
+			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
+				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
+			} else {
+				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
+			} ?></div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li>
-						<h3 class="widget-title">NAMA </h3></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 
-<div id="content"><!-- end wrap -->
-
-</div>
-
 <div id="content">
 
-	<div class="wrap">
+<div class="wrap">
 		<div class="b8">
-			<h3 class="title">MY PROFILE</h3>
+			<h3>&nbsp;</h3>
+
+			<div class="wrap">
+		<div class="b8">
+			<h3 class="title">PROFIL SAYA</h3>
 
 			<p>&nbsp;</p>
 
 			<div class="page">
 				<table id="d03" width="1000px" border="1">
 					<tr>
-						<td><p>If students have any sickness, please upload the letter/form from doctor here:</p>
+						<td><p>&nbsp;</p>
 
-							<form action="upload.php" method="post" enctype="multipart/form-data">
-								<input type="file" name="file"/>
-								<button type="submit" name="btn-upload">upload</button>
-								<p>
-									<label>File Uploaded Successfully... </label>
-									<label>Problem While File Uploading !</label>
-									<?php
-									}
-									else
-									{
-										?>
-										<label>Try to upload any files(PDF, DOC, JPEG, etc...)</label>
-										<?php
-									}
-									?></p>
-							</form>
-							<form action="parent_edit_profile.php?id=<?php echo $std_id; ?>" method="post"
-							      name="details">
+							<form action="parent_edit_profile_process.php?id=<?php echo $_SESSION['SESS_USERNAME']; ?>"
+							      method="post" name="details">
 								<center>
-									<table id="contact" width="527" border="1" align="center">
+									<table id="d02" width="628" border="1" align="center">
 										<tr style="text-align:left">
-											<td width="183">Name</td>
-											<td width="328">&nbsp;</td>
+											<td width="247">NAMA </td>
+											<td width="365"></td>
 										</tr>
 										<tr>
-											<td>Student ID</td>
+											<td>TARIKH LAHIR</td>
+											<td><input name="std_name" type="text" id="textfield"
+											                       value="" size="50"></td>
+										</tr>
+										<tr>
+											<td>UMUR</td>
 											<td>&nbsp;</td>
 										</tr>
 										<tr>
-											<td>Standard</td>
-											<td>&nbsp;</td>
+											<td>TEMPAT LAHIR</td>
+											<td><input name="std_ic" type="text" id="textfield4"
+											           value="" size="50"></td>
 										</tr>
 										<tr>
-											<td>Student IC</td>
-											<td>&nbsp;</td>
+											<td>NO SURAT BERANAK</td>
+											<td><input name="phone_num" type="text" id="textfield5"
+											           value="" size="50"></td>
 										</tr>
 										<tr>
-											<td>Phone Number</td>
-											<td>&nbsp;</td>
+											<td>NO.MYKID</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+										</tr>
+		
+        <tr>
+											<td>BILANGAN ADIK BERADIK</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+									  </tr>	
+                                        <tr>
+											<td>ANAK KE</td>
+											<td><input name="address" type="text" id="textfield6"
+											           value="" size="50"></td>
+                                                       
+                                                       
+										</tr>							<tr>
+											<td>ALAMAT</td>
+											<td><p>
+											  <textarea name="textarea" id="textarea"value="<?php echo $parents; ?>" cols="45" rows="5"></textarea>
+                                          </p></td>
 										</tr>
 										<tr>
-											<td>Address</td>
-											<td>&nbsp;</td>
-										</tr>
-										<tr>
-											<td>Parent's Name</td>
-											<td>&nbsp;</td>
-										</tr>
-										<tr>
-											<td>Parent's Phone Number</td>
-											<td>&nbsp;</td>
-										</tr>
-										<tr>
-											<td>Email</td>
-											<td>&nbsp;</td>
-										</tr>
-										<tr>
-											<td>Sickness</td>
-											<td><a href="agl/<?php echo $row['sickness'] ?>" target="_blank">view
-													file</a></td>
-										</tr>
-										<tr>
-											<td>EDIT</td>
-											<td><input type="submit" name="submit" id="button" value="EDIT"></td>
+											<td></td>
+											<td align="right"><input type="submit" name="button2" id="button2"
+											                         value="Edit">
+												<input name="std_id" type="hidden" id="textfield3"
+												       value="<?php echo $_SESSION['SESS_USERNAME']; ?>" size="50"></td>
 										</tr>
 									</table>
 								</center>
@@ -224,6 +214,9 @@
 
 		</div>
 		<div class="b4 sidebar"></div><!-- end sidebar -->
+	</div>
+		</div>
+		<p>&nbsp;</p><!-- end sidebar -->
 	</div><!-- end wrap -->
 
 </div><!-- end content -->

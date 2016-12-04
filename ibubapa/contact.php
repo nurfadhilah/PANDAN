@@ -70,188 +70,101 @@
 	</ul>
 
 	<div class="wrap">
-		<h1><a href="../../AGL_all/index.php" title=""></a></h1><!-- logo -->
+		<h1>LOGO TADIKA</h1><!-- logo -->
 
 		<!-- ---------------------------------------------MENU--------------------------------------------------- -->
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li class="current-menu-item"><a href="../../AGL_all/index.php" title="Home Page">Home</a></li>
+				<li class="current-menu-item"><a href="index.php" title="Home Page">HALAMAN UTAMA</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/about.php" title="About">About Us</a></li>
+				<li><a href="about.php" title="About">TENTANG KAMI</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/contact.php" title="Contact">Contact Us</a></li>
+				<li><a href="contact.php" title="Contact">HUBUNGI KAMI</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="#loginForm" title="Log In">Log In</a></li>
+				<li><a href="#loginForm" title="Log In">LOG MASUK</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
-				<li><a href="#loginForm" title="Log In">Sign Up</a></li>
+				<li><a href="#loginForm" title="Log In">MENDAFTAR </a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
 			</ul><!-- end dd-menu// -->
 		</div><!-- end main-navigation -->
 	</div>
+
 	<div id="intro">
 		<div class="wrap">
 
 			<div class="c-8">
-				<h1>HOME </h1>
-
-				<p class="breadcrumbs">You are here:<strong>Home</strong></p>
+				<h1>HUBUNGI KAMI</h1>
 			</div>
 
-			<div class="c-4">
-				<div class="widget widget-social">
-					<ul>
-						<li><a class="twitter-intro" title="" href="#"></a></li>
-						<li><a class="facebook-intro" title="" href="#"></a></li>
-						<li><a class="social-intro" title="" href="#"></a></li>
-						<li><a class="rss-intro" title="" href="#"></a></li>
-					</ul>
-				</div>
-			</div>
+			<div class="c-4"></div>
 
 		</div><!-- end wrap -->
-	</div>
-
+	</div><!-- end intro -->
 
 	<div class="wrap">
 
 		<h1>&nbsp;</h1>
 
-		<div id="main-navigation"><!-- end dd-menu -->
+		<div id="main-navigation">
+			<!-- end dd-menu -->
 
 		</div><!-- end main-navigation -->
+
 
 	</div><!-- end wrap -->
 </div><!-- end header -->
 
-<div id="content" class="home">
 
-	<div id="slider">
-		<div class="wrap">
+<div id="content">
 
-			<div class="c-8">
-				<div id="big-slider">
-					<div class="slider-mask"></div>
-					<ul id="slider-items">
-						<li>
-							<img src="assets/slider_asset__0000_.jpg" width="650" height="293" alt="Slider Image"
-							     title=""/>
-						</li>
-						<li>
-							<img src="assets/slider_asset__0001_.jpg" width="650" height="293" alt="Slider Image"
-							     title=""/>
-						</li>
-						<li>
-							<img src="assets/slider_asset__0002_.jpg" width="650" height="293" alt="Slider Image"
-							     title=""/>
-						</li>
-						<li>
-							<img src="assets/slider_asset__0003_.jpg" width="650" height="293" alt="Slider Image"
-							     title=""/>
-						</li>
-						<li>
-							<img src="assets/slider_asset__0004_.jpg" width="650" height="293" alt="Slider Image"
-							     title=""/>
-						</li>
-					</ul>
 
-					<!-- This list is populated by jQuery Cycle -->
-					<div id="pagination-container">
-						<span class="previous"></span>
-						<span id="slider-pagination"></span>
-						<span class="next"></span>
-					</div>
-				</div><!-- END big-slider -->
-			</div>
+	<div class="wrap">
+		<div class="c-12">
 
-			<div class="c-4">
-				<!-- end cat-slider -->
-			</div>
+			<form enctype="multipart/form-data" method="post" action="php/mail.php" id="contactform">
+				<div class="send-form">
 
-		</div><!-- end wrap --><!-- END slider-bg // ljulja, togodan, vepak // pronunced by my son Luka :) -->
+					<p>
+						<label>*Your Name:</label>
+						<input class="u-4" name="name" id="name"/>
+					</p>
 
-	</div><!-- end slider-->
+					<p>
+						<label>*Your E-mail:</label>
+						<input class="u-4" name="email" id="email"/>
+					</p>
 
-	<div id="featured">
-		<div class="wrap">
+					<p>
+						<label>Your Phone Number:</label>
+						<input class="u-4" name="website" id="website"/>
+					</p>
 
-			<div class="c-8">
-				<div class="wrap">
-					<div class="b8">
-						<div class="page">
-							<h2>ABOUT ANGEL TUITION CENTRE</h2>
+					<p>
+						<label>Subject:</label>
+						<input class="u-4" name="subject" id="subject"/>
+					</p>
 
-							<p>Angel tuition centre was founded by Angel a/p Mariadass in 2015 through FSKKP UMP
-								Department licence. The mission of Angel Tuition Centre is to provide primary school
-								student and their parents with the best possible care while providing enough facilities
-								from aspect education, knowledge and learning environment. Our goal also to allow
-								children enhance their development through interaction and exploration by incorporation
-								developmentally an appropriate curriculum. Our teachers are dedicated and know exactly
-								how to guide student to fulfill their maximum learning potential with enough
-								facilities.</p>
-						</div><!-- end page-->
-					</div><!-- end b8-->
+					<p>
+						<label>Your Message:</label>
+						<textarea class="u-6" name="message" id="message" cols="70" rows="5"></textarea>
+					</p>
 
-					<!-- end b4-->
+					<p>
+						<input type="submit" name="" class="submit" value="Contact Us"/>
+						<input type="reset" name="" class="reset" value="Clear form"/>
+					</p>
 
-				</div>
-			</div>
-		</div><!-- end wrap -->
-	</div><!-- END featured -->
+				</div><!--  end book-table-form -->
+			</form><!--  end entry -->
 
-	<div id="container-middle">
-		<div class="wrap">
+		</div>
 
-			<div class="c-4">
-				<h3>OUR TEACHERS</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+	</div>
 
-				<div class="mask">
-					<a title="" href="assets/slider_asset__0000_.jpg" rel="example_group">
-						<span class="middle-frame-mask"></span>
-						<img src="assets/slider_asset__0000_300x135.jpg" alt="" title=""/>
-					</a>
-				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
-
-			<div class="c-4">
-				<h3>&nbsp;</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
-
-				<div class="mask">
-					<a title="" href="assets/slider_asset__0001_.jpg" rel="example_group">
-						<span class="middle-frame-mask"></span>
-						<img src="assets/slider_asset__0001_300x135.jpg" alt="" title=""/>
-					</a>
-				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
-
-			<div class="c-4">
-				<h3>&nbsp;</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
-
-				<div class="mask">
-					<a title="" href="assets/slider_asset__0002_.jpg" rel="example_group">
-						<span class="middle-frame-mask"></span>
-						<img src="assets/slider_asset__0002_300x135.jpg" alt="" title=""/>
-					</a>
-				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
-
-		</div><!-- end wrap -->
-	</div> <!-- end container-middle -->
-
-</div><!-- end content -->
-
-<div id="footer">
+	<div id="footer">
 	<div class="wrap">
 
 		<div class="c-3">
@@ -313,12 +226,12 @@
 		</div>
 		<div class="c-3">
 			<div id="form_wrapper" class="form_wrapper">
-				<form id="loginForm" name="loginForm" onsubmit="return Validate()" method="post" class="login active">
+				<form id="loginForm" name="loginForm" method="post" class="login active" action="index.php">
 					<h3>Log In</h3>
 
 					<div>
-						<label>Username:</label>
-						<input type="text" name="username" placeholder="Username"/>
+						<label>Email:</label>
+						<input type="email" name="email" placeholder="Email"/>
 					</div>
 					<div>
 						<label>Password:</label>
@@ -328,20 +241,22 @@
 						<label>Category : </label>
 						<select name="leveling" style="width:200px; font-size:14px; height:35px">
 							<option value="">Categories</option>
-							<option value="Admin">Admin</option>
-							<option value="Student">Student/ibubapa</option>
+							<option value="Admin">Guru</option>
+							<option value="Student">Ibu Bapa/Pelajar</option>
 						</select>
 						<br>
 					</div>
 					<div class="bottom">
 						<div class="remember">
 							<p>
-								<input name="Submit" type="submit" onclick="return LoginCategory()" value="Log In"/>
+								<input name="submit" type="submit" value="Log In"/>
 
 						</div>
 						<div class="clear"></div>
 					</div>
 				</form>
+
+				<h3><a href="parents_registration.php">Tiada Akaun? Daftar disini...</a></h3>
 			</div>
 			<!--  end widget -->
 		</div>
@@ -351,7 +266,9 @@
 
 	<center>
 		<p id="copyright">&copy;Tadika Kemas Pandan 1| (2016)</p></center>
-</div><!-- end footer -->
+</div><!-- end wrap -->
+
+</div><!-- end content --><!-- end footer -->
 
 </body>
 </html>

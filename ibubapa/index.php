@@ -1,25 +1,4 @@
-<?php
 
-include("../admin/dbase.php");
-
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-
-	$sql = "SELECT * FROM users WHERE email='$email'";
-	$results = mysql_query($sql);
-	while ($row = mysql_fetch_assoc($results)) {
-		if ($row['email'] == $email && $row['password'] == md5($password)) {
-			$_SESSION['user'] = $row;
-			echo "<script>alert('Selamat datang {$_SESSION['user']['username']}!')</script>";
-			echo "<script>setTimeout(function(){window.location.href = 'parents_registrationA.php'}, 1000)</script>";
-		} else {
-			echo "<script>alert('Tiada maklumat ditemui!')</script>";
-		}
-	}
-}
-
-?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -93,22 +72,22 @@ if (isset($_POST['submit'])) {
 	</ul>
 
 	<div class="wrap">
-		<h1><a href="../../AGL_all/index.php" title=""></a></h1><!-- logo -->
+		<h1>LOGO TADIKA</h1><!-- logo -->
 
 		<!-- ---------------------------------------------MENU--------------------------------------------------- -->
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li class="current-menu-item"><a href="../../AGL_all/index.php" title="Home Page">Home</a></li>
+				<li class="current-menu-item"><a href="index.php" title="Home Page">HALAMAN UTAMA</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/about.php" title="About">About Us</a></li>
+				<li><a href="about.php" title="About">TENTANG KAMI</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="../../AGL_all/contact.php" title="Contact">Contact Us</a></li>
+				<li><a href="contact.php" title="Contact">HUBUNGI KAMI</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a href="#loginForm" title="Log In">Log In</a></li>
+				<li><a href="#loginForm" title="Log In">LOG MASUK</a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
-				<li><a href="#loginForm" title="Log In">Sign Up</a></li>
+				<li><a href="#loginForm" title="Log In">MENDAFTAR </a></li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 
 			</ul><!-- end dd-menu// -->
@@ -117,27 +96,11 @@ if (isset($_POST['submit'])) {
 	<div id="intro">
 		<div class="wrap">
 
-			<div class="c-8">
-				<h1>HOME </h1>
-				<?php
-				if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
-					echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
-				} else {
-					echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-				}
-				?>
+		  <div class="c-8">
+			<h1>HALAMAN UTAMA</h1>
 			</div>
 
-			<div class="c-4">
-				<div class="widget widget-social">
-					<ul>
-						<li><a class="twitter-intro" title="" href="#"></a></li>
-						<li><a class="facebook-intro" title="" href="#"></a></li>
-						<li><a class="social-intro" title="" href="#"></a></li>
-						<li><a class="rss-intro" title="" href="#"></a></li>
-					</ul>
-				</div>
-			</div>
+			<div class="c-4"></div>
 
 		</div><!-- end wrap -->
 	</div>
@@ -195,14 +158,20 @@ if (isset($_POST['submit'])) {
 
 			<div class="c-4">
 				<div id="cat-slider">
-					<h2>OUR PROGRAM</h2>
+					<h2>PENGUMUMAN</h2>
 					<span class="devider"></span>
 
 					<div id="scroller">
 						<ul>
-							<li><h3><a href="#" title="Infant">Infant</a></h3>Lorem ipsum dolor sit amet sit amet</li>
-							<li><h3><a href="#" title="Infant">Pre-toddlers</a></h3>Lorem ipsum dolor sit amet</li>
-							<li><h3><a href="#" title="Infant">Toddlers</a></h3>Lorem ipsum dolor sit amet</li>
+							<li>
+							  <h3><a href="#" title="Infant">1</a>							</h3>
+							</li>
+					    <li>
+					      <h3><a href="#" title="Infant">2</a></h3>
+					      SUKANEKA</li>
+							<li>
+							  <h3><a href="#" title="Infant">3</a></h3>
+							  GOTONG ROYONG</li>
 						</ul>
 						<ul>
 							<li><h3><a href="#" title="Infant">Infant 1</a></h3>Lorem ipsum dolor sit amet sit amet</li>
@@ -233,18 +202,9 @@ if (isset($_POST['submit'])) {
 				<div class="wrap">
 					<div class="b8">
 						<div class="page">
-							<h2>ABOUT ANGEL TUITION CENTRE</h2>
+							<h2>TENTANG TADIKA KEMAS</h2>
 
-							<p>Angel tuition centre was founded by Angel a/p Mariadass in 2015 through FSKKP UMP
-								Department licence. The mission of Angel Tuition Centre is to provide primary school
-								student and their parents with the best possible care while providing enough facilities
-								from aspect education, knowledge and learning environment. Our goal also to allow
-								children enhance their development through interaction and exploration by incorporation
-								developmentally an appropriate curriculum. Our teachers are dedicated and know exactly
-								how to guide student to fulfill their maximum learning potential with enough
-								facilities.</p>
-							<a class="read-more"><span class="circle-arrow"></span></a>
-						</div><!-- end page-->
+							<p>Tadika Kemas Pandan 1 adalah tadika di bawah seliaan KEMAS.</p></div><!-- end page-->
 					</div><!-- end b8-->
 
 					<!-- end b4-->
@@ -258,8 +218,8 @@ if (isset($_POST['submit'])) {
 		<div class="wrap">
 
 			<div class="c-4">
-				<h3>OUR TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL KAMI</h3>
+				<h4>Huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0000_.jpg" rel="example_group">
@@ -267,13 +227,12 @@ if (isset($_POST['submit'])) {
 						<img src="assets/slider_asset__0000_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>FOOD TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL MAKANAN</h3>
+				<h4>huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0001_.jpg" rel="example_group">
@@ -281,13 +240,12 @@ if (isset($_POST['submit'])) {
 						<img src="assets/slider_asset__0001_300x135.jpg" alt="" title=""/>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet, ie et dolore magna aliqua. Forem pero Ut enim ad minim veniam, quis
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>huraian</p>
 			</div>
 
 			<div class="c-4">
-				<h3>ACTIVITY TIMETABLE</h3>
-				<h4>LOREM IPSUM DOLOR SIT AMET</h4>
+				<h3>JADUAL AKTIVITI</h3>
+				<h4>huraian</h4>
 
 				<div class="mask">
 					<a title="" href="assets/slider_asset__0002_.jpg" rel="example_group">

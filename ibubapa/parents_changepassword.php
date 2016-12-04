@@ -70,38 +70,38 @@
 	</ul>
 	<div class="wrap">
 
-		<h1><a href="home" title=""></a></h1>
+		<h1>&nbsp;</h1>
 
 		<div id="main-navigation">
 			<ul class="dd-menu">
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				</li>
-				<li><a href="admin_view_sub.php" title="Subject">Home</a>
+				<li><a href="parents_home.php" title="Subject">HALAMAN UTAMA</a>
 				</li>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Registration</a>
+					<a href="parents_registrationA.php" title="Schedule">PENDAFTARAN</a>
 
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Teacher">Payment</a>
+				<li><a title="Teacher">BAYARAN</a>
 					<ul>
-						<li><a href="admin_add_teacher.php" title="Add Teacher">Registration fee</a></li>
-						<li><a href="admin_list_teacher.php" title="List of Teacher">Monthly fee</a></li>
+						<li><a href="parent_bayaranpendaftaran.php" title="Add Teacher">PENDAFTARAN</a></li>
+						<li><a href="parents_bayaranbulanan.php" title="List of Teacher">YURAN BULANAN</a></li>
 
 					</ul>
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
 				<li>
-					<a href="admin_upload_schedule.php" title="Schedule">Attendance</a>
+					<a href="parents_attendanceA.php" title="Schedule">KEDATANGAN</a>
 
 				</li>
 				<li><img src="../../AGL_all/img/devide.png" width="10" height="34"></li>
-				<li><a title="Result">Others</a>
+				<li><a title="Result">LAIN</a>
 					<ul>
-						<li><a href="admin_list_result_mid.php" title="Mid Term">View Profile</a></li>
-						<li><a href="admin_list_result_final.php" title="Final Exam">Change Password</a></li>
-						<li><a href="admin_list_result.php" title="Full Result">Log Out</a></li>
+						<li><a href="parents_home.php" title="Mid Term">PROFIL</a></li>
+						<li><a href="parents_changepassword.php" title="Final Exam">TUKAR PASSWORD</a></li>
+						<li><a href="index.php" title="Full Result">KELUAR</a></li>
 
 					</ul>
 
@@ -120,50 +120,24 @@
 	<div class="wrap">
 
 		<div class="c-8">
-			<h1>HOME</h1>
+			<h1>TUKAR KATALALUAN</h1>
 
 			<?php if (isset($_SESSION['user']) && ($_SESSION['user']['username'] != '')) {
 				echo "<p class='breadcrumbs'>Hai {$_SESSION['user']['username']}, Anda berada dihalaman:<strong>Utama</strong></p>";
 			} else {
 				echo "<p class='breadcrumbs'>Anda berada dihalaman:<strong>Utama</strong></p>";
-			} ?> &raquo; <a href="home">Sample
-				Page</a> &raquo; <strong>About Full</strong></p>
+			} ?>
 		</div>
 
-		<div class="c-4">
-			<div class="widget widget-social">
-				<ul>
-					<li><h3 class="widget-title">Kids voice social</h3></li>
-					<li><a class="twitter-intro" title="" href="#"></a></li>
-					<li><a class="facebook-intro" title="" href="#"></a></li>
-					<li><a class="social-intro" title="" href="#"></a></li>
-					<li><a class="rss-intro" title="" href="#"></a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="c-4"></div>
 
 	</div><!-- end wrap -->
 </div><!-- end intro -->
 <div class="wrap">
-	<center><h3>CHANGE PASSWORD</h3></center>
+	<center><h3>TUKAR KATALALUAN</h3></center>
 	<div class="b8">
 		<h1>
 			<center>
-                <span class="content_resize">
-                  <?php
-                  include("dbase.php");
-                  $query = //"SELECT * FROM student WHERE matric_id = '$idURL'";
-	                  "SELECT  * 	FROM login WHERE username= '" . $_SESSION['SESS_USERNAME'] . "' ";
-
-
-                  $result = mysql_query($query, $conn) or die("Could not execute query");
-                  $row = mysql_fetch_array($result, MYSQL_BOTH); // using numeric index or array index
-
-                  $password = $row['password'];
-
-                  @mysql_free_result($result);
-                  ?>
-                </span>
 			</center>
 		</h1>
 
@@ -174,21 +148,18 @@
 						<form name="add" method="post" action="changePassword_process.php">
 							<table width="322" id="password" style="background:#FFFFFF">
 								<tr bgcolor="#FFFFFF">
-									<td width="166" height="26" valign="top" bgcolor="white"><strong>&nbsp;Old
-											Password</strong></td>
+									<td width="166" height="26" valign="top" bgcolor="white"><strong>KATALALUAN LAMA</strong></td>
 									<td width="144" valign="top" bgcolor="white">&nbsp;
-										<input name="student_matric" type="password" size="10"/>
-										<input type="hidden" name="student_matric3"
-										       value="<?php echo $row['password']; ?>"/></td>
+										<input name="student_matric" type="password" size="10"/></td>
 								</tr>
 								<tr bgcolor="#FFFFFF">
-									<td height="27" valign="top" bgcolor="white"><strong>&nbsp;New Password</strong>
+									<td height="27" valign="top" bgcolor="white"><strong>KATALALUAN BARU</strong>
 									</td>
 									<td bgcolor="white">&nbsp;
 										<input name="student_name" type="password" size="10"/></td>
 								</tr>
 								<tr bgcolor="#FFFFFF">
-									<td height="26" valign="top" bgcolor="white"><strong>&nbsp;Confirm Password</strong>
+									<td height="26" valign="top" bgcolor="white"><strong>&nbsp;SAHKAN KATALALUAN</strong>
 									</td>
 									<td align="left" valign="top" bgcolor="white">&nbsp;
 										<input name="student_name2" type="password" size="10"/></td>
@@ -197,8 +168,8 @@
 									<td colspan="2" height="36" valign="top" bgcolor="white"><input align="center"
 									                                                                name="add2"
 									                                                                type="submit"
-									                                                                value="CHANGE"
-									                                                                onClick="return Submit()"/>
+									                                                                value="KEMASKINI"
+									                                                               />
 									</td>
 								</tr>
 							</table>
