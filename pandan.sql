@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2016 at 11:12 AM
+-- Generation Time: Dec 04, 2016 at 05:32 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -158,14 +158,18 @@ CREATE TABLE IF NOT EXISTS `toddlers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `modified_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `toddlers`
 --
 
 INSERT INTO `toddlers` (`id`, `name`, `standard`, `dob`, `birth_place`, `birth_no`, `mykid`, `sibling_count`, `sibling_index`, `address`, `parent_id`, `sibling_id`, `fav_game`, `fav_homework`, `fav_food`, `food_allergy`, `special_problem`, `disability`, `special_exp`, `emergency_contact_name`, `emergency_contact_address`, `emergency_contact_phone`, `transporter_name`, `transporter_address`, `transporter_phone`, `transporter_transport_type_no`, `parent_declaration_1`, `parent_declaration_2`, `parent_declaration_3`, `parent_declaration_4`, `doc_standard_1`, `doc_standard_2`, `doc_standard_3`, `doc_standard_4`, `doc_standard_5`, `doc_standard_6`, `doc_standard_7`, `status_id`, `created_at`, `modified_at`) VALUES
-(1, 'mizan', 1, '25/10/92', 'Melaka', 'J39234', '921025045563', 5, 3, 'No.21 JLN', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+(1, 'mizan', 1, '25/10/92', 'Melaka', 'J39234', '921025045563', 5, 3, 'No.21 JLN', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(2, 'Diana', 1, '12/12/12', 'Penang', 'J123234', '0023124034', 5, 1, 'No.23 Las', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL),
+(3, 'NUR', 1, '12.05.2016', 'L', '123', '234', 1, 4, 'JFALJF', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(4, 'Lala', 1, '20/12/12', 'Penang', 'J9343', '912340203', 4, 2, 'No.21 Jln', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL),
+(5, 'SITI ', 1, '22.04.1993', 'parit ', 'j455', 'sdf', 2, 2, 'jalan', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -204,14 +208,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `fullname`, `address_1`, `father_name`, `father_ic`, `father_age`, `father_dob`, `father_birth_place`, `father_work`, `father_income`, `father_study_level`, `father_phone`, `mother_name`, `mother_ic`, `mother_age`, `mother_dob`, `mother_birth_place`, `mother_work`, `mother_income`, `mother_study_level`, `mother_phone`, `address_2`, `role_id`, `status_id`) VALUES
-(1, 'mexists', 'mexists@yahoo.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'mexists', 'mexists@yahoo.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'NURFADHILAH', 'ellah.fadhilah93@gmail.com', '2bf31436e3ebd85c9a515896f6f2be32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
